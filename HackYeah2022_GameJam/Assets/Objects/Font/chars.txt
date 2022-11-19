@@ -1,0 +1,10 @@
+qwertyuiop[]asdfghjkl;'zxcvbnm,./\
+`1234567890-=!@#$%^&*()_+|}{:"?><QWERTYUIOPLKJHGFDSAZXCVBNMĄĘŻŹĆÓŁółżźćęąńŃ
+SettlementName_0;Liptovský Hrádok
+SettlementName_1;Brașov
+SettlementName_2;Zlin
+SettlementName_3;Balatonmagyaród
+SettlementName_4;Haczów
+SettlementName_5;Uzhhorod
+SettlementName_6;Steyr
+SettlementName_7;Rtanj

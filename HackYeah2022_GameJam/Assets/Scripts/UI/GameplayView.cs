@@ -9,8 +9,12 @@ namespace Game
     {
         [SerializeField]private TextMeshProUGUI _MoneyLabel;
         [SerializeField]private TextMeshProUGUI _PeopleLabel;
-
+        
         public void BreakGame()
+        {
+            Main.Instance.BreakGame();
+        }
+        public void OpenSettings()
         {
             Main.Instance.BreakGame();
         }
