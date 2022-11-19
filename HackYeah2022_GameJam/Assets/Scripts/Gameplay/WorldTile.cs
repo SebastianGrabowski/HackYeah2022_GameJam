@@ -5,13 +5,13 @@ using UnityEngine;
 public enum TileType
 {
     Land,
-    Farm
+    Farm,
+    Building
 }
 
 public class WorldTile : MonoBehaviour
 {
-    //private Collectible _Collectible;
-    public GameObject CollectibleObj;
+    [HideInInspector] public GameObject CollectibleObj;
 
 
     public TileType TileType;
