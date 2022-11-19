@@ -9,12 +9,14 @@ namespace Game.Data
     public class BuildingData : ScriptableObject
     {
 
+        [System.Serializable]
         public class ResourceValue
         {
             public ResourceData Resource;
             public int Value;
         }
-
+        
+        public int ID;
         public ResourceValue[] BuildCost;
         public float BuildTime;
     }

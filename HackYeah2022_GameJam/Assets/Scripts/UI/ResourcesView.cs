@@ -25,7 +25,7 @@ namespace Game
                 var newItem = Instantiate(_Template, _Template.transform.parent);
                 var valueLabel = newItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                 newItem.transform.GetChild(1).GetComponent<Image>().sprite = res.Icon;
-                newItem.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = "TOOLTIP " + i.ToString();
+                newItem.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = LocalizationController.GetValue("ResourceName_" + i.ToString());
                 _ValueLabels.Add(valueLabel);
             }
             _Template.gameObject.SetActive(false);

@@ -42,9 +42,9 @@ namespace Game.Data
 
         public SettlementData GetSettlementData(int id)
         {
-            for(var i = 0; i < CountryData.Length; i++)
+            for(var i = 0; i < SettlementData.Length; i++)
             {
-                if (CountryData[i].ID == id)
+                if (SettlementData[i].ID == id)
                 {
                     return SettlementData[i];
                 }
@@ -54,9 +54,9 @@ namespace Game.Data
 
         public ResourceData GetResourceData(int id)
         {
-            for(var i = 0; i < CountryData.Length; i++)
+            for(var i = 0; i < ResourceData.Length; i++)
             {
-                if (CountryData[i].ID == id)
+                if (ResourceData[i].ID == id)
                 {
                     return ResourceData[i];
                 }
@@ -66,9 +66,9 @@ namespace Game.Data
 
         public BuildingData GetBuildingData(int id)
         {
-            for(var i = 0; i < CountryData.Length; i++)
+            for(var i = 0; i < BuildingData.Length; i++)
             {
-                if (CountryData[i].ID == id)
+                if (BuildingData[i].ID == id)
                 {
                     return BuildingData[i];
                 }
