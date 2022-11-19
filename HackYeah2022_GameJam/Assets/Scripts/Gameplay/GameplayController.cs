@@ -29,8 +29,7 @@ namespace Game.Gameplay
             if(_T > 0.4f)
             {
                 _T = 0.0f;
-                Resources[Random.Range(0, Resources.Length)]++;
-
+               
                 var r = Random.Range(0, Resources.Length);
                 People[r] = Mathf.Clamp(People[r] + Random.Range(-1, 3), 0, 1000);  
             }
