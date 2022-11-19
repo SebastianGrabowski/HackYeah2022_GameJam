@@ -22,10 +22,10 @@ ResourceName_2;Meat
 ResourceName_3;Milk
 ResourceName_4;Wool
 -
-BuildingName_0;BX
-BuildingName_1;BY
-BuildingName_2;BZ
-BuildingName_3;A
+BuildingName_0;Mill
+BuildingName_1;Sawmill
+BuildingName_2;Dairy
+BuildingName_3;Wool Spinning Mill 
 BuildingName_4;B
 BuildingName_5;C
 BuildingName_6;D
