@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: 2_Z
   m_EditorClassIdentifier: 
   ID: 2
-  BuildTime: 0
+  BuildCost: []
+  BuildTime: 122

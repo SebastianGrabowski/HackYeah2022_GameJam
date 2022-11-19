@@ -25,4 +25,17 @@ ResourceName_4;Wool
 BuildingName_0;BX
 BuildingName_1;BY
 BuildingName_2;BZ
+BuildingName_3;A
+BuildingName_4;B
+BuildingName_5;C
+BuildingName_6;D
+BuildingName_7;E
 -
+BuildingDesc_0;DescBX
+BuildingDesc_1;DescBY
+BuildingDesc_2;DescBZ
+BuildingDesc_3;DescA
+BuildingDesc_4;DescB
+BuildingDesc_5;DescC
+BuildingDesc_6;DescD
+BuildingDesc_7;DescE
