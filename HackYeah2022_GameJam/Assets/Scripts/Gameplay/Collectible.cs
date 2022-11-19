@@ -55,7 +55,7 @@ public class Collectible : MonoBehaviour
         _TimeToElapse = Time.time + _CollectionTime;
         progressBar.SetProgressValue(_CollectionTime);
 
-        Destroy(progressBar.gameObject, (_TimeToElapse - 0.05f));
+        Destroy(progressBar.gameObject, (_CollectionTime - 0.05f));
 
         _IsCollected = true;
     }

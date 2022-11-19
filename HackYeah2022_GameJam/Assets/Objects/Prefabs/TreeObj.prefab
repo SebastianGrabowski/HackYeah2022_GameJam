@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Amount: 4
-  _CollectionTime: 10
+  _CollectionTime: 5
   _CollectionProgressOffset: {x: 0, y: 0.4}
   _Animator: {fileID: 1829016511211246035}
   _ResourceData: {fileID: 11400000, guid: c60422ca0ceecf7488c79759b6e4e1e6, type: 2}
