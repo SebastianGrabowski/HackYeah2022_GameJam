@@ -35,7 +35,8 @@ public class Collectible : MonoBehaviour
 
     void Awake()
     {
-        _StartSprite = _SpriteRenderer.sprite;
+        if (_SpriteRenderer != null)
+            _StartSprite = _SpriteRenderer.sprite;
     }
 
     private void OnMouseOver()
