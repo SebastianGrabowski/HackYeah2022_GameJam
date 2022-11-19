@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct ObjectData
+{
+    public TileType TileType;
+    public GameObject Object;
+    public float Amount;
+}
+
 public class WorldGenerator : MonoBehaviour
 {
-    [SerializeField] private float _ObjectsAmount;
-
-    [SerializeField] private TileType _TileType;
-
-    [SerializeField] private GameObject _Object;
+    [SerializeField] private ObjectData[] _ObjectData;
     [SerializeField] private TileGridCreator[] _TileGridCreators;
 
     private void Start()
@@ -22,24 +26,37 @@ public class WorldGenerator : MonoBehaviour
             }
         }
 
-        var safeObjectsAmount = 100;
-        while(_ObjectsAmount > 0)
-        {
-            var randomTile = Random.Range(0, totalTiles.Count);
-            
-            if(totalTiles[randomTile].TileType == _TileType)
-            {
-                var obj = Instantiate(_Object, totalTiles[randomTile].transform.position, Quaternion.identity);
-                
-                var collectible = _Object.GetComponent<Collectible>();
-                if(collectible != null) totalTiles[randomTile].CollectibleObj = obj;
-        
-                totalTiles.Remove(totalTiles[randomTile]);
-                _ObjectsAmount--;
-            }
-            else safeObjectsAmount--;
 
-            if(safeObjectsAmount <= 0) break;
+        for(int i = 0; i < _ObjectData.Length; i++)
+        {
+            if(!HasAvaiableTile(totalTiles, _ObjectData[i].TileType)) continue;
+
+            var amount = _ObjectData[i].Amount;
+            while(amount > 0)
+            {
+                var randomTile = Random.Range(0, totalTiles.Count);
+                
+                if(totalTiles[randomTile].TileType == _ObjectData[i].TileType)
+                {
+                    var obj = Instantiate(_ObjectData[i].Object, totalTiles[randomTile].transform.position, Quaternion.identity);
+                    
+                    var collectible = _ObjectData[i].Object.GetComponent<Collectible>();
+                    if(collectible != null) totalTiles[randomTile].CollectibleObj = obj;
+            
+                    totalTiles.Remove(totalTiles[randomTile]);
+                    amount --;
+                }
+            }
         }
+    }
+
+    private bool HasAvaiableTile(List<WorldTile> totalTiles, TileType tileType)
+    {
+        foreach(var tile in totalTiles)
+        {
+            if(tile.TileType == tileType) return true;
+        }
+
+        return false;
     }
 }

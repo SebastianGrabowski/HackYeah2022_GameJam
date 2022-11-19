@@ -14,7 +14,9 @@ public class Collectible : MonoBehaviour
 {
     [SerializeField] private int _Amount;
     [SerializeField] private float _CollectionTime;
+
     [SerializeField] private Vector2 _CollectionProgressOffset;
+    [SerializeField] private Vector2 _NotificationOffset;
 
     [SerializeField] private Animator _Animator;
     [SerializeField] private Sprite _SpriteCollected;
@@ -22,8 +24,11 @@ public class Collectible : MonoBehaviour
     [SerializeField] private ResourceData _ResourceData;
     [SerializeField] private ProgressBar _ProgressBar;
 
+    [SerializeField] private GameObject _NotificationAlert;
+
     [SerializeField] private CollectibleType _CollectibleType;
 
+    private GameObject _NotificationObj;
     private Sprite _StartSprite;
 
     private bool _CanBeCollected;
@@ -77,6 +82,9 @@ public class Collectible : MonoBehaviour
 
     private void RespawnWool()
     {
+        var spawnPos = new Vector2(transform.position.x + _NotificationOffset.x, transform.position.y + _NotificationOffset.y);
+        _NotificationObj = Instantiate(_NotificationAlert, spawnPos, Quaternion.identity);
+        _NotificationObj.transform.localScale = new Vector3(4f, 4f, 4f);
         _SpriteRenderer.sprite = _StartSprite;
         _IsCollected = false;
     }
@@ -96,6 +104,8 @@ public class Collectible : MonoBehaviour
 
         if(_CollectibleType == CollectibleType.Wool) 
         {
+            if(_NotificationObj != null) Destroy(_NotificationObj);
+            _Animator.SetTrigger("WoolCollect");
             _SpriteRenderer.sprite = _SpriteCollected;
             Game.Gameplay.GameplayController.Instance.Resources[_ResourceData.ID] += _Amount;
         }
