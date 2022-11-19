@@ -9,6 +9,8 @@ namespace Game
     {
         [SerializeField]private TextMeshProUGUI _MoneyLabel;
         [SerializeField]private TextMeshProUGUI _PeopleLabel;
+        [SerializeField]private BuildWindow _BuildWindow;
+
         
         public void BreakGame()
         {
@@ -19,12 +21,19 @@ namespace Game
             Main.Instance.BreakGame();
         }
 
+        public void OpenBuildWindow()
+        {
+            _BuildWindow.Open();
+        }
 
         private void Update()
         {
             var gc = Gameplay.GameplayController.Instance;
             _MoneyLabel.text = gc.Money.ToString();
             _PeopleLabel.text = gc.People[4].ToString();
+
+            if(Input.GetKeyDown(KeyCode.Z))
+                OpenBuildWindow();
         }
     }
 }
