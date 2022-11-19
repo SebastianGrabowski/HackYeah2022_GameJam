@@ -49,11 +49,14 @@ MonoBehaviour:
   _Amount: 4
   _CollectionTime: 5
   _CollectionProgressOffset: {x: 0, y: 0.2}
+  _NotificationOffset: {x: -0.1, y: 0.4}
   _Animator: {fileID: 1829016511211246035}
   _SpriteCollected: {fileID: 2111573206, guid: 6fcef6dcf06870349803354a5faf629c, type: 3}
   _SpriteRenderer: {fileID: 1964985548981324323}
   _ResourceData: {fileID: 11400000, guid: 5c19dbc127576f545814dc1f2c816c48, type: 2}
   _ProgressBar: {fileID: 340071534097123851, guid: 8c5c3b9eec80c6d4a83c7c19038a43f8,
+    type: 3}
+  _NotificationAlert: {fileID: 1477268086523845094, guid: b019a409f4ee8bb4681d5b65a120cf95,
     type: 3}
   _CollectibleType: 1
 --- !u!95 &1829016511211246035

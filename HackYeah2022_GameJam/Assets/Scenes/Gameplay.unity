@@ -587,9 +587,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca3560f749cb6249b299cdbc8929ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ObjectsAmount: 4
-  _TileType: 0
-  _Object: {fileID: 3799490413242560197, guid: 87b66ed10fa99c143ab2a6deecca6134, type: 3}
+  _ObjectData:
+  - TileType: 0
+    Object: {fileID: 3799490413242560197, guid: 87b66ed10fa99c143ab2a6deecca6134,
+      type: 3}
+    Amount: 4
+  - TileType: 0
+    Object: {fileID: 3799490413242560197, guid: 2266fbd4523649141832cf77d7eb21e9,
+      type: 3}
+    Amount: 2
   _TileGridCreators:
   - {fileID: 572321744}
   - {fileID: 38920119}
