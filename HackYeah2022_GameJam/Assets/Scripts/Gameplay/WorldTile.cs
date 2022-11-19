@@ -12,6 +12,7 @@ public enum TileType
 public class WorldTile : MonoBehaviour
 {
     [HideInInspector] public GameObject CollectibleObj;
+    [HideInInspector] public Game.Gameplay.Building Building;
 
 
     public TileType TileType;
@@ -22,6 +23,7 @@ public class WorldTile : MonoBehaviour
     {
         _Indicator = FindObjectOfType<Indicator>();
         _PlayerController = FindObjectOfType<PlayerController>();
+        Building = GetComponent<Game.Gameplay.Building>();
     }
 
     private void OnMouseOver()
@@ -45,6 +47,6 @@ public class WorldTile : MonoBehaviour
 
     public void Build(int buildingDataID)
     {
-        GetComponent<Game.Gameplay.Building>().Set(buildingDataID);
+        Building.Set(buildingDataID);
     }
 }

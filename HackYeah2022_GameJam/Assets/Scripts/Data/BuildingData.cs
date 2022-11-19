@@ -18,6 +18,7 @@ namespace Game.Data
         
         public int ID;
         public ResourceValue[] BuildCost;
+        public BuildingData[] ReqBuildings;
         public float BuildTime;
         public Sprite ViewSprite;
         public Sprite Icon;

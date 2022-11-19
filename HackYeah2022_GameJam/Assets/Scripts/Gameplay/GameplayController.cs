@@ -35,5 +35,51 @@ namespace Game.Gameplay
             }
         }
 
+        public bool CanBuild(Data.BuildingData building)
+        {
+            var allBuildings = FindObjectsOfType<Building>();
+            if(building.ReqBuildings != null)
+            {
+                for(var i = 0; i < building.ReqBuildings.Length; i++)
+                {
+                    var hasBuilding = false;
+                    for(var j = 0; j < allBuildings.Length; j++)
+                    {
+                        if (allBuildings[j].Build && allBuildings[j].ActiveBuildingID == building.ReqBuildings[i].ID)
+                        {
+                            hasBuilding = true;
+                            break;
+                        }
+                    }
+                    if (!hasBuilding)
+                    {
+                        return false;
+                    }
+                }
+            }
+            if (building.BuildCost != null)
+            {
+                for(var i = 0; i < building.BuildCost.Length; i++)
+                {
+                    if(Resources[(int)building.BuildCost[i].Resource.ID] < building.BuildCost[i].Value)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public void BuildHandler(Data.BuildingData building)
+        {
+            if (building.BuildCost != null)
+            {
+                for(var i = 0; i < building.BuildCost.Length; i++)
+                {
+                    Resources[(int)building.BuildCost[i].Resource.ID] -= building.BuildCost[i].Value;
+                }
+            }
+        }
+
     }
 }

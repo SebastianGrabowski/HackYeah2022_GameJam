@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
                 Collect();
             } else if (TileHovered.TileType == TileType.Building)
             {
-                Game.GameplayView.Instance.OpenBuildWindow(TileHovered);
+                if(TileHovered.Building.ActiveBuildingID == -1)
+                {
+                    Game.GameplayView.Instance.OpenBuildWindow(TileHovered);
+                }
             }
         }
     }
