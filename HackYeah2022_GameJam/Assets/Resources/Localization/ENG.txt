@@ -7,14 +7,14 @@ CountryName_5;Ukraine
 CountryName_6;Austria
 CountryName_7;Serbia
 -
-SettlementName_0;Settlement_0
-SettlementName_1;Settlement_1
-SettlementName_2;Settlement_2
-SettlementName_3;Settlement_3
-SettlementName_4;Settlement_4
-SettlementName_5;Settlement_5
-SettlementName_6;Settlement_6
-SettlementName_7;Settlement_7
+SettlementName_0;Liptovský Hrádok
+SettlementName_1;Brașov
+SettlementName_2;Zlin
+SettlementName_3;Balatonmagyaród
+SettlementName_4;Haczów
+SettlementName_5;Uzhhorod
+SettlementName_6;Steyr
+SettlementName_7;Rtanj
 -
 ResourceName_0;Wood
 ResourceName_1;Wheat

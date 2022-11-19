@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 1_Wheat
   m_EditorClassIdentifier: 
   ID: 1
-  Icon: {fileID: 21300000, guid: 881798b77426a8f47b533dcc4767e9e5, type: 3}
+  Icon: {fileID: 21300000, guid: deee8f716ba4f0d47b12310d0907f375, type: 3}
