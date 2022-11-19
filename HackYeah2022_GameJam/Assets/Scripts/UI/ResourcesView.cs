@@ -23,8 +23,8 @@ namespace Game
             {
                 var res = Data.DataController.Instance.GetResourceData(i);
                 var newItem = Instantiate(_Template, _Template.transform.parent);
-                var valueLabel = newItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                newItem.transform.GetChild(1).GetComponent<Image>().sprite = res.Icon;
+                var valueLabel = newItem.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
+                newItem.transform.GetChild(0).GetComponent<Image>().sprite = res.Icon;
                 newItem.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = LocalizationController.GetValue("ResourceName_" + i.ToString());
                 _ValueLabels.Add(valueLabel);
             }
