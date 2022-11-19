@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WorldGenerator : MonoBehaviour
 {
-    [SerializeField] private bool _IsCollectible;
     [SerializeField] private float _ObjectsAmount;
 
     [SerializeField] private TileType _TileType;
@@ -30,10 +29,10 @@ public class WorldGenerator : MonoBehaviour
             
             if(totalTiles[randomTile].TileType == _TileType)
             {
-                Instantiate(_Object, totalTiles[randomTile].transform.position, Quaternion.identity);
+                var obj = Instantiate(_Object, totalTiles[randomTile].transform.position, Quaternion.identity);
                 
                 var collectible = _Object.GetComponent<Collectible>();
-                if(collectible != null) totalTiles[randomTile].Collectible = collectible;
+                if(collectible != null) totalTiles[randomTile].CollectibleObj = obj;
         
                 totalTiles.Remove(totalTiles[randomTile]);
                 _ObjectsAmount--;

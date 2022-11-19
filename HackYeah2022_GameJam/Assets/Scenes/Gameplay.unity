@@ -452,7 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca3560f749cb6249b299cdbc8929ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _IsCollectible: 0
   _ObjectsAmount: 4
   _TileType: 0
   _Object: {fileID: 3799490413242560197, guid: 87b66ed10fa99c143ab2a6deecca6134, type: 3}
@@ -1702,7 +1701,7 @@ PrefabInstance:
     - target: {fileID: 8363532104721639615, guid: 5ca4715eb5b143147a4c6da1ff62102f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8363532104721639615, guid: 5ca4715eb5b143147a4c6da1ff62102f,
         type: 3}

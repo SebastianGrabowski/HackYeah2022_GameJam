@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private void Collect()
     {
         //Add collectible amount;
-        Destroy(TileHovered.Collectible.gameObject);
+        var collectible = TileHovered.CollectibleObj.GetComponent<Collectible>();
+        Game.Gameplay.GameplayController.Instance.Resources[collectible.ResourceData.ID] += collectible.Amount;
+        Destroy(TileHovered.CollectibleObj);
     }
 }

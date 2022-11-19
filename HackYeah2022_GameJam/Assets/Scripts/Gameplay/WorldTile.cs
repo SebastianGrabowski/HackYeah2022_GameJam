@@ -10,7 +10,9 @@ public enum TileType
 
 public class WorldTile : MonoBehaviour
 {
-    public Collectible Collectible;
+    //private Collectible _Collectible;
+    public GameObject CollectibleObj;
+
 
     public TileType TileType;
     private Indicator _Indicator;
@@ -36,7 +38,7 @@ public class WorldTile : MonoBehaviour
 
     public bool CanCollect()
     {
-        if(Collectible != null) return Collectible.CanCollect();
+        if(CollectibleObj != null) return CollectibleObj.GetComponent<Collectible>().CanCollect();
 
         return false;
     }

@@ -23,8 +23,8 @@ public class Collectible : MonoBehaviour
 
     public bool CanCollect()
     {
-        if(_IsOver && _CanBeCollected) return true;
+        // if(_IsOver && _CanBeCollected) return true;
 
-        return false;
+        return true;
     }
 }
