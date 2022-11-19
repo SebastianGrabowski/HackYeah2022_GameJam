@@ -15,6 +15,8 @@ namespace Game
 
         private List<UnityEngine.UI.Button> _Buttons = new List<UnityEngine.UI.Button>();
 
+        private WorldTile _Tile;
+
         private void Start()
         {
             var c = Data.DataController.Instance.BuildingData.Length;
@@ -54,10 +56,24 @@ namespace Game
             }
         }
 
-        public void Open()
+        public void Open(WorldTile tile)
         {
+            _Tile = tile;
             _Blocker.enabled = true;
             _View.SetActive(true);
+
+            var i = 0;
+            foreach(var b in _Buttons)
+            {
+                var j = i;
+                b.onClick.RemoveAllListeners();
+                b.onClick.AddListener(()=>{ 
+                    var k = j;
+                    _Tile.Build(k);
+                    Close();
+                    });
+                i++;
+            }
         }
 
         public void Close()

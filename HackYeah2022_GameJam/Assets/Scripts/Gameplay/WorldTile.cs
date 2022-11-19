@@ -42,4 +42,9 @@ public class WorldTile : MonoBehaviour
 
         return false;
     }
+
+    public void Build(int buildingDataID)
+    {
+        GetComponent<Game.Gameplay.Building>().Set(buildingDataID);
+    }
 }

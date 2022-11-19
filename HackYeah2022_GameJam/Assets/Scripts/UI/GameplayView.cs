@@ -11,7 +11,13 @@ namespace Game
         [SerializeField]private TextMeshProUGUI _PeopleLabel;
         [SerializeField]private BuildWindow _BuildWindow;
 
-        
+        public static GameplayView Instance;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         public void BreakGame()
         {
             Main.Instance.BreakGame();
@@ -21,9 +27,9 @@ namespace Game
             Main.Instance.BreakGame();
         }
 
-        public void OpenBuildWindow()
+        public void OpenBuildWindow(WorldTile tile)
         {
-            _BuildWindow.Open();
+            _BuildWindow.Open(tile);
         }
 
         private void Update()
@@ -31,9 +37,6 @@ namespace Game
             var gc = Gameplay.GameplayController.Instance;
             _MoneyLabel.text = gc.Money.ToString();
             _PeopleLabel.text = gc.People[4].ToString();
-
-            if(Input.GetKeyDown(KeyCode.Z))
-                OpenBuildWindow();
         }
     }
 }

@@ -8,9 +8,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(TileHovered != null && TileHovered.CanCollect() && Input.GetMouseButtonDown(0)) 
+        if(TileHovered != null && Input.GetMouseButtonDown(0)) 
         {
-            Collect();
+            if (TileHovered.CanCollect())
+            {
+                Collect();
+            } else if (TileHovered.TileType == TileType.Building)
+            {
+                Game.GameplayView.Instance.OpenBuildWindow(TileHovered);
+            }
         }
     }
 
