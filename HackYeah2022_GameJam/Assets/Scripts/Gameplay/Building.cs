@@ -8,22 +8,26 @@ namespace Game.Gameplay
     public class Building : MonoBehaviour
     {
         
-        [SerializeField] private ProgressBar _ProgressBar;
+        [SerializeField]private ProgressBar _ProgressBar;
 
         public int ActiveBuildingID = -1;
         public bool Build;
         
-        public SpriteRenderer _Renderer;
+        [SerializeField]private GameObject[] _Renderers;
 
         public void Set(int buildingDataID)
         {
             ActiveBuildingID = buildingDataID;
-            if(ActiveBuildingID == -1)
+            
+            for(var i = 0; i < _Renderers.Length; i++)
             {
-                _Renderer.enabled = false;
-            } else
+                _Renderers[i].SetActive(false);
+            }
+
+            if(ActiveBuildingID != -1)
             {
-                var spawnPos = new Vector2(transform.position.x, transform.position.y + 0.5f);
+
+                var spawnPos = new Vector2(transform.position.x, transform.position.y);
                 var progressBar = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
                 progressBar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 
@@ -32,9 +36,9 @@ namespace Game.Gameplay
 
                 Destroy(progressBar.gameObject, data.BuildTime);
 
-                _Renderer.enabled = true;
-                _Renderer.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
-                _Renderer.sprite = data.ViewSprite;
+                //_Renderer.enabled = true;
+                //_Renderer.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+                //_Renderer.sprite = data.ViewSprite;
 
                 Invoke("BuildDone", data.BuildTime);
             }
@@ -42,8 +46,9 @@ namespace Game.Gameplay
 
         private void BuildDone()
         {
+            _Renderers[ActiveBuildingID].SetActive(true);
             Build = true;
-            _Renderer.color = Color.white;
+            //_Renderer.color = Color.white;
         }
     }
 }

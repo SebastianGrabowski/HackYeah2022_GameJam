@@ -18,7 +18,11 @@ namespace Game.Gameplay
             Resources = new int[Data.DataController.Instance.ResourceData.Length];
             People = new int[Data.DataController.Instance.SettlementData.Length];
             var settlement = Data.DataController.Instance.GetSettlementData(4); //4=PL
-            Resources = settlement.StartResources;
+            Resources = new int[settlement.StartResources.Length];
+            for(var i = 0; i < Resources.Length; i++)
+            {
+                Resources[i] = settlement.StartResources[i];
+            }
             Money = settlement.StartMoney;
             People[4] = settlement.StartPeople;
         }
