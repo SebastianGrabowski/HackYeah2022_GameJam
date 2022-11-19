@@ -13,7 +13,9 @@ public class TileGridCreator : MonoBehaviour
     [SerializeField] private Vector2 _TileOffset;
 
     [Space(10)]
-    [SerializeField] private GameObject _Tile;
+    [SerializeField] private WorldTile _Tile;
+
+    public List<WorldTile> WorldTiles { get; private set; } = new List<WorldTile>();
 
     private void Start()
     {
@@ -28,8 +30,11 @@ public class TileGridCreator : MonoBehaviour
         {
             for(int i = 0; i < _TileAmount; i++)
             {
-                var tileObj = Instantiate(_Tile, this.transform);
-                tileObj.transform.position = new Vector2(tileObj.transform.position.x + xOffset, tileObj.transform.position.y + yOffset);
+                WorldTile spawnedTile = Instantiate(_Tile, this.transform);
+
+                spawnedTile.transform.position = new Vector2(spawnedTile.transform.position.x + xOffset, spawnedTile.transform.position.y + yOffset);
+
+                WorldTiles.Add(spawnedTile);
 
                 xOffset += _TileOffset.x;
             }

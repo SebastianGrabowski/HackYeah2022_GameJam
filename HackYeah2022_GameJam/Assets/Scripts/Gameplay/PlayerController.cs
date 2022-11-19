@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    [HideInInspector] public WorldTile TileHovered;
+
+    private void Update()
+    {
+        if(TileHovered != null && TileHovered.CanCollect() && Input.GetMouseButtonDown(0)) 
+        {
+            Collect();
+        }
+    }
+
+    private void Collect()
+    {
+        //Add collectible amount;
+        Destroy(TileHovered.Collectible.gameObject);
+    }
+}
