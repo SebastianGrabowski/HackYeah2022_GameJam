@@ -19,5 +19,7 @@ namespace Game.Data
         public int ID;
         public ResourceValue[] BuildCost;
         public float BuildTime;
+        public Sprite ViewSprite;
+        public Sprite Icon;
     }
 }
