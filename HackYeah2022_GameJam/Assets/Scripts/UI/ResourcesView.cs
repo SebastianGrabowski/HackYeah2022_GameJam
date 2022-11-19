@@ -36,11 +36,11 @@ namespace Game
         // Update is called once per frame
         void Update()
         {
-            if (_Initialized)
+            if (_Initialized && Gameplay.GameplayController.Instance != null)
             {
                 for(var i = 0; i < _ValueLabels.Count; i++)
                 {
-                    _ValueLabels[i].text = i.ToString();
+                    _ValueLabels[i].text = Gameplay.GameplayController.Instance.Resources[i].ToString();
                 }
             }
         }

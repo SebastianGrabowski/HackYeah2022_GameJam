@@ -5,6 +5,7 @@ namespace Game
     using UnityEngine;
     using UnityEngine.UI;
     using TMPro;
+    using System.Linq;
 
     public class ScoreListView : MonoBehaviour
     {
@@ -41,13 +42,24 @@ namespace Game
             }
             _SpawnedItems.Clear();
 
+            List<KeyValuePair<int, int>> a = new List<KeyValuePair<int, int>>();
+            
+            var people = Game.Gameplay.GameplayController.Instance.People;
             foreach(var s in settlementsData)
+            {
+                a.Add(new KeyValuePair<int, int>(s.ID, people[s.ID]));
+            }
+
+            a = a.OrderByDescending(x=>x.Value).ToList();
+
+            foreach(var s in a)
             {
                 var newItem = Instantiate(_TemplateItem, _TemplateItem.transform.parent);
                 newItem.gameObject.SetActive(true);
-                newItem.transform.GetChild(0).GetComponent<Image>().sprite = s.Country.Flag;
-                newItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = LocalizationController.GetValue("SettlementName_" + s.ID.ToString());
-                newItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "+22";
+                var settlement = Data.DataController.Instance.GetSettlementData(s.Key);
+                newItem.transform.GetChild(0).GetComponent<Image>().sprite = settlement.Country.Flag;
+                newItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = LocalizationController.GetValue("SettlementName_" + s.Key.ToString());
+                newItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = s.Value.ToString();
                 _SpawnedItems.Add(newItem);
             }
         }

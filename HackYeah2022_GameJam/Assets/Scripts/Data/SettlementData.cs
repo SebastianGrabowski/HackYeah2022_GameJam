@@ -15,5 +15,9 @@ namespace Game.Data
 
         public Vector2 MapPosition;
 
+        public int StartMoney;
+        public int[] StartResources;
+        public int StartPeople;
+
     }
 }
