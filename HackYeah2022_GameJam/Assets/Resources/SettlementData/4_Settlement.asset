@@ -16,5 +16,5 @@ MonoBehaviour:
   Country: {fileID: 11400000, guid: d6acadac3bb3c024b9c98f56fed1760c, type: 2}
   MapPosition: {x: 0, y: 0}
   StartMoney: 40
-  StartResources: 1600000016000000090000000e0000000d000000
+  StartResources: 06000000030000006a000000690000006b000000
   StartPeople: 70

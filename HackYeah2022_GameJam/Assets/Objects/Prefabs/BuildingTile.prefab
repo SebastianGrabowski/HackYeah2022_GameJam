@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollectibleObj: {fileID: 0}
+  Building: {fileID: 0}
   TileType: 2
 --- !u!114 &2596743943761429307
 MonoBehaviour:
@@ -140,7 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae5a102b7b1d8f4fad67e7b4831484d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ProgressBar: {fileID: 340071534097123851, guid: 8c5c3b9eec80c6d4a83c7c19038a43f8,
+    type: 3}
   ActiveBuildingID: -1
+  Build: 0
   _Renderer: {fileID: 4374290868024756993}
 --- !u!1 &7454665985553433498
 GameObject:
@@ -240,4 +244,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollectibleObj: {fileID: 0}
+  Building: {fileID: 0}
   TileType: 2

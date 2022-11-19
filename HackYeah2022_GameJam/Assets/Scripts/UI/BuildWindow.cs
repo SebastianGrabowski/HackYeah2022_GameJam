@@ -62,16 +62,21 @@ namespace Game
             _Blocker.enabled = true;
             _View.SetActive(true);
 
+            var gameplayController = Game.Gameplay.GameplayController.Instance;
+
             var i = 0;
             foreach(var b in _Buttons)
             {
+                var data = Data.DataController.Instance.GetBuildingData(i);
+                b.interactable = gameplayController.CanBuild(data);
                 var j = i;
                 b.onClick.RemoveAllListeners();
                 b.onClick.AddListener(()=>{ 
                     var k = j;
                     _Tile.Build(k);
                     Close();
-                    });
+                    gameplayController.BuildHandler(data);
+                });
                 i++;
             }
         }
