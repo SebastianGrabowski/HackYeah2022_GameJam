@@ -10,6 +10,8 @@ namespace Game
     public class ScoreListView : MonoBehaviour
     {
         [SerializeField]private GameObject _TemplateItem;
+        [SerializeField]private GameObject _MainItem;
+        [SerializeField]private GameObject _BigView;
 
         private List<GameObject> _SpawnedItems = new List<GameObject>();
 
@@ -19,6 +21,11 @@ namespace Game
         void Start()
         {
             Refresh();
+        }
+
+        public void ToggleBigView()
+        {
+            _BigView.SetActive(!_BigView.activeInHierarchy);
         }
 
         // Update is called once per frame
@@ -62,6 +69,11 @@ namespace Game
                 newItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = s.Value.ToString();
                 _SpawnedItems.Add(newItem);
             }
+            
+            var settlement2 = Data.DataController.Instance.GetSettlementData(4);
+            _MainItem.transform.GetChild(0).GetComponent<Image>().sprite = settlement2.Country.Flag;
+            _MainItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = LocalizationController.GetValue("SettlementName_4");
+            _MainItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = people[4].ToString();
         }
     }
 }
