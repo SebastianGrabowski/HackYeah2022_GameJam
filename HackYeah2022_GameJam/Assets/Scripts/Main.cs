@@ -15,6 +15,8 @@ namespace Game
         public AudioSource SheepSFX;
         public AudioSource BuildSFX;
         public AudioSource DestroySFX;
+        public AudioSource ScytheSFX;
+        public AudioSource WoodSFX;
 
         protected override void OnAwake()
         {

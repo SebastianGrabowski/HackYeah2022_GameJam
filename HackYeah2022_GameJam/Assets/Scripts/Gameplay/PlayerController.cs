@@ -31,6 +31,15 @@ public class PlayerController : MonoBehaviour
                 {
                     if (TileHovered.CanCollect())
                     {
+
+                        if(TileHovered.ic == IndicatorIconType.WheatCollect)
+                            Game.Main.Instance.ScytheSFX.Play();
+        
+                        if(TileHovered.ic == IndicatorIconType.WoodCollect)
+                            Game.Main.Instance.ScytheSFX.Play();
+        
+                        if(TileHovered.ic == IndicatorIconType.WoolCollect)
+                            Game.Main.Instance.SheepSFX.Play();
                         Collect();
                     } else if (TileHovered.TileType == TileType.Building)
                     {

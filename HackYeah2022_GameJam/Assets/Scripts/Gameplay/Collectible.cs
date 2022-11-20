@@ -101,6 +101,7 @@ public class Collectible : MonoBehaviour
                 _WorldGenerator.OnTreeCollected();
                 _Animator.SetTrigger("Collect");
                 Invoke(nameof(Collected), 1f);
+                Game.Main.Instance.WoodSFX.Play();
             }
         }
         else if(CollectibleType == CollectibleType.Wool)
@@ -126,6 +127,7 @@ public class Collectible : MonoBehaviour
 
             if(_IsCollected && Time.time >= _TimeToElapse)
             {
+                Game.Main.Instance.ScytheSFX.Play();
                 RespawnWheat();
             }
         }

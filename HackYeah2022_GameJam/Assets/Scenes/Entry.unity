@@ -390,6 +390,8 @@ MonoBehaviour:
   SheepSFX: {fileID: 923771283}
   BuildSFX: {fileID: 421438099}
   DestroySFX: {fileID: 1312723880}
+  ScytheSFX: {fileID: 8254502161939798962}
+  WoodSFX: {fileID: 8254502161939798961}
 --- !u!4 &1452445534
 Transform:
   m_ObjectHideFlags: 0
@@ -594,6 +596,18 @@ PrefabInstance:
 --- !u!4 &8254502161939798960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 55812284204290257, guid: 5cef8a5cfca58634bafd090375b9f1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 8254502161939798959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8254502161939798961 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3498159567719069066, guid: 5cef8a5cfca58634bafd090375b9f1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 8254502161939798959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8254502161939798962 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4436275851944401504, guid: 5cef8a5cfca58634bafd090375b9f1ba,
     type: 3}
   m_PrefabInstance: {fileID: 8254502161939798959}
   m_PrefabAsset: {fileID: 0}

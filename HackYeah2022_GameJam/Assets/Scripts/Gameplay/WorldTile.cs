@@ -41,11 +41,13 @@ public class WorldTile : MonoBehaviour
             c.DestroyNotification();
     }
 
+    public IndicatorIconType ic;
+
     private void OnMouseOver()
     {
         _PlayerController.TileHovered = this;
         IndicatorIconType indicatorIconType = IndicatorIconType.None;
-
+       
         if(CollectibleObj != null && CanCollect()) 
         {
             if(CollectibleObj.GetComponent<Collectible>().CollectibleType == CollectibleType.Wood) indicatorIconType = IndicatorIconType.WoodCollect;
@@ -62,6 +64,8 @@ public class WorldTile : MonoBehaviour
         else if(CollectibleObj == null) indicatorIconType = IndicatorIconType.Build;
         
         if(TileType != TileType.Mountains) _Indicator.UpdateIndicatorPosition(this.transform.position, indicatorIconType);
+        ic = indicatorIconType;
+
     }
 
     private void OnMouseExit()
