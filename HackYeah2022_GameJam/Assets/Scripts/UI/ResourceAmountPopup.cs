@@ -10,7 +10,7 @@ public class ResourceAmountPopup : MonoBehaviour
     public void SetAmount(int amount)
     {
         if(amount > 0) _Amount.text = "+"+amount;
-        else _Amount.text = "-"+amount;
+        else _Amount.text = amount.ToString();
 
         _Amount.gameObject.SetActive(true);
     }
