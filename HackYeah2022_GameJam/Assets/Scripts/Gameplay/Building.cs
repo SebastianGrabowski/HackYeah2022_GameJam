@@ -20,7 +20,12 @@ namespace Game.Gameplay
         public float ProcessTime;
 
         public Data.BuildingData _Data;
+        
+        [SerializeField] private GameObject _NotificationAlert;
+        [SerializeField] private Vector2 _NotificationOffset;
+        private GameObject _NotificationObj;
 
+        private ProgressBar _ProcessProgress;
 
         public void Set(int buildingDataID)
         {
@@ -64,6 +69,15 @@ namespace Game.Gameplay
             //_Renderer.color = Color.white;
         }
 
+        public void DestroyHandler()
+        {
+            if (_ProcessProgress != null && _ProcessProgress.gameObject != null)
+            {
+                Destroy(_ProcessProgress.gameObject);
+            }
+            if(_NotificationObj != null) Destroy(_NotificationObj);
+        }
+
         private void Update()
         {
             if(Build && _Data != null && _Data.ProcessSell)
@@ -74,12 +88,12 @@ namespace Game.Gameplay
                     {
                         ProcessReady = false;
                         ProcessCheckIn = false;
-                        
+                        ProcessTime = 0;
                         var spawnPos = new Vector2(transform.position.x, transform.position.y);
-                        var progressBar = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
-                        progressBar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                        progressBar.SetProgressValue(_Data.ProcessTime);
-                        Destroy(progressBar.gameObject, _Data.ProcessTime);
+                        _ProcessProgress = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
+                        _ProcessProgress.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        _ProcessProgress.SetProgressValue(_Data.ProcessTime);
+                        Destroy(_ProcessProgress.gameObject, _Data.ProcessTime);
 
                     }
                 } else if (!ProcessReady)
@@ -88,6 +102,11 @@ namespace Game.Gameplay
                     if(ProcessTime >= _Data.ProcessTime)
                     {
                         ProcessReady = true;
+                        
+                        if(_NotificationObj != null) Destroy(_NotificationObj);
+                        var spawnPos = new Vector2(transform.position.x + _NotificationOffset.x, transform.position.y + _NotificationOffset.y);
+                        _NotificationObj = Instantiate(_NotificationAlert, spawnPos, Quaternion.identity);
+                        _NotificationObj.transform.localScale = new Vector3(4f, 4f, 4f);
                     }
                 }
             }
@@ -125,6 +144,7 @@ namespace Game.Gameplay
             //add resources here
             var gc = Gameplay.GameplayController.Instance;
             gc.Resources[5] += _Data.ProcessMoney;
+            if(_NotificationObj != null) Destroy(_NotificationObj);
         }
     }
 }
