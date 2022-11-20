@@ -1,0 +1,44 @@
+CountryName_0;Słowacja
+CountryName_1;Rumunia
+CountryName_2;Czechy
+CountryName_3;Węgry
+CountryName_4;Polska
+CountryName_5;Ukraina
+CountryName_6;Austria
+CountryName_7;Serbia
+-
+SettlementName_0;Liptovský Hrádok
+SettlementName_1;Brașov
+SettlementName_2;Zlin
+SettlementName_3;Balatonmagyaród
+SettlementName_4;Haczów
+SettlementName_5;Uzhhorod
+SettlementName_6;Steyr
+SettlementName_7;Rtanj
+-
+ResourceName_0;Drewno
+ResourceName_1;Pszenica
+ResourceName_2;Mięso
+ResourceName_3;Mleko
+ResourceName_4;Wełna
+ResourceName_5;Monety
+-
+BuildingName_0;Młyn
+BuildingName_1;Tartak
+BuildingName_2;Mleczarnia
+BuildingName_3;Przędzalnia wełny
+BuildingName_4;Pole pszenicy
+BuildingName_5;Zagroda owiec
+BuildingName_6;Dom
+BuildingName_7;Duży dom
+-
+BuildingDesc_0;Pozwala Ci robić mąke z pszenicy, i zarabiać na jej sprzedaży.
+BuildingDesc_1;Pozwoli Ci przerobić drewno na deski, i sprzedawać je.
+BuildingDesc_2;W tym miejscu z mleka tworzony jest ser, a następnie sprzedawany z zyskiem.
+BuildingDesc_3;Pozwala Ci sprzedawać wełne z owiec.
+BuildingDesc_4;Uprawa roli dostarcza pszenicy, która może zostać przerobiona na mąke i sprzedana.
+BuildingDesc_5;Owce są ważną częścią życia w karpatach. Zapewniają mleko i wełne.
+BuildingDesc_6;Dom powoduje wzrost populacji.
+BuildingDesc_7;Duży dom powoduje duży wzrost populacji
+-
+PeopleTooltip;Populacja wioski
