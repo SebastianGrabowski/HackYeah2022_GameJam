@@ -17,4 +17,4 @@ MonoBehaviour:
   MapPosition: {x: 0, y: 0}
   StartMoney: 40
   StartResources: 6a0000006a0000006a00000069000000870000000a000000
-  StartPeople: 70
+  StartPeople: 10
