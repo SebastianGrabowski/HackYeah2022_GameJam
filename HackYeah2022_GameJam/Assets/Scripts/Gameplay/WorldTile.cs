@@ -6,7 +6,8 @@ public enum TileType
 {
     Land,
     Farm,
-    Building
+    Building,
+    Mountains
 }
 
 public class WorldTile : MonoBehaviour
