@@ -32,13 +32,13 @@ namespace Game.Gameplay
         {
             Resources = new int[Data.DataController.Instance.ResourceData.Length];
             People = new int[Data.DataController.Instance.SettlementData.Length];
-            var settlement = Data.DataController.Instance.GetSettlementData(4); //4=PL
+            var settlement = Data.DataController.Instance.GetSettlementData(Main.PlayerID);
             Resources = new int[settlement.StartResources.Length];
             for(var i = 0; i < Resources.Length; i++)
             {
                 Resources[i] = settlement.StartResources[i];
             }
-            People[4] = settlement.StartPeople;
+            People[Main.PlayerID] = settlement.StartPeople;
         }
 
         private void Update()
@@ -49,7 +49,7 @@ namespace Game.Gameplay
                 _T = 0.0f;
                
                 var r = Random.Range(0, Resources.Length);
-                if(r != 4)
+                if(r != Main.PlayerID)
                     People[r] = Mathf.Clamp(People[r] + Random.Range(-1, 3), 0, 1000);  
             }
         }
@@ -117,7 +117,7 @@ namespace Game.Gameplay
         {
             if (building.ChangePeople != 0)
             {
-                People[4] += building.ChangePeople;
+                People[Main.PlayerID] += building.ChangePeople;
             }
         }
         
@@ -125,7 +125,7 @@ namespace Game.Gameplay
         {
             if (building.ChangePeople != 0)
             {
-                People[4] -= building.ChangePeople;
+                People[Main.PlayerID] -= building.ChangePeople;
             }
         }
     }

@@ -70,10 +70,10 @@ namespace Game
                 _SpawnedItems.Add(newItem);
             }
             
-            var settlement2 = Data.DataController.Instance.GetSettlementData(4);
+            var settlement2 = Data.DataController.Instance.GetSettlementData(Main.PlayerID);
             _MainItem.transform.GetChild(0).GetComponent<Image>().sprite = settlement2.Country.Flag;
             _MainItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = LocalizationController.GetValue("SettlementName_4");
-            _MainItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = people[4].ToString();
+            _MainItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = people[Main.PlayerID].ToString();
         }
     }
 }
