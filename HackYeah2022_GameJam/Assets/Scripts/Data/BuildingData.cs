@@ -22,5 +22,6 @@ namespace Game.Data
         public float BuildTime;
         public Sprite ViewSprite;
         public Sprite Icon;
+        public int ChangePeople;
     }
 }

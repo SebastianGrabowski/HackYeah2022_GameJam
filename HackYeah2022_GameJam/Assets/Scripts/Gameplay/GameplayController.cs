@@ -47,7 +47,8 @@ namespace Game.Gameplay
                 _T = 0.0f;
                
                 var r = Random.Range(0, Resources.Length);
-                People[r] = Mathf.Clamp(People[r] + Random.Range(-1, 3), 0, 1000);  
+                if(r != 4)
+                    People[r] = Mathf.Clamp(People[r] + Random.Range(-1, 3), 0, 1000);  
             }
         }
 
@@ -110,5 +111,20 @@ namespace Game.Gameplay
             }
         }
 
+        public void BuildEndHandler(Data.BuildingData building)
+        {
+            if (building.ChangePeople != 0)
+            {
+                People[4] += building.ChangePeople;
+            }
+        }
+        
+        public void DestroyHandler(Data.BuildingData building)
+        {
+            if (building.ChangePeople != 0)
+            {
+                People[4] -= building.ChangePeople;
+            }
+        }
     }
 }

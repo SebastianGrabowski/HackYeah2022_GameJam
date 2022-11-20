@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   BuildCost: []
-  ReqBuildings: []
+  ReqBuildings:
+  - {fileID: 11400000, guid: 49c4a7e6efa78064f9d22385fc091d7c, type: 2}
   BuildTime: 10
   ViewSprite: {fileID: 21300000, guid: e6ac8b5c7f825484dac53bf8785bd112, type: 3}
   Icon: {fileID: 0}
+  ChangePeople: 0
