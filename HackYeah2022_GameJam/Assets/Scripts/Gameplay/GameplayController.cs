@@ -39,6 +39,19 @@ namespace Game.Gameplay
             }
         }
 
+        public bool HasBuilding(int id)
+        {
+            var allBuildings = FindObjectsOfType<Building>();
+            for(var j = 0; j < allBuildings.Length; j++)
+            {
+                if(allBuildings[j].Build && allBuildings[j].ActiveBuildingID == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public bool CanBuild(Data.BuildingData building)
         {
             var allBuildings = FindObjectsOfType<Building>();
