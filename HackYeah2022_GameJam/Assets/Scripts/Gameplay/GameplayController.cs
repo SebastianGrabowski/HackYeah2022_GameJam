@@ -13,6 +13,11 @@ namespace Game.Gameplay
 
         private float _T;
 
+        public void ChangeResource(int resourceID, int value)
+        {
+            Resources[resourceID] += value;
+        }
+
         protected override void OnAwake()
         {
             Resources = new int[Data.DataController.Instance.ResourceData.Length];
@@ -93,7 +98,7 @@ namespace Game.Gameplay
             {
                 for(var i = 0; i < building.BuildCost.Length; i++)
                 {
-                    Resources[(int)building.BuildCost[i].Resource.ID] -= building.BuildCost[i].Value;
+                    ChangeResource((int)building.BuildCost[i].Resource.ID, -building.BuildCost[i].Value);
                 }
             }
         }

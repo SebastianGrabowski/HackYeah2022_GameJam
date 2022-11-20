@@ -21,6 +21,9 @@ namespace Game
 
         private WorldTile _Tile;
 
+        public static bool LockMapClick;
+
+
         private void Start()
         {
             var c = Data.DataController.Instance.BuildingData.Length;
@@ -118,6 +121,7 @@ namespace Game
 
         public void Open(WorldTile tile)
         {
+            LockMapClick = true;
             _Tile = tile;
             _Blocker.enabled = true;
             _View.SetActive(true);
@@ -145,6 +149,7 @@ namespace Game
         {
             _Blocker.enabled = false;
             _View.SetActive(false);
+            LockMapClick = false;
         }
     }
 }
