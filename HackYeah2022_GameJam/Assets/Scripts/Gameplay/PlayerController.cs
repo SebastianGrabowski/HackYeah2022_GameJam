@@ -10,14 +10,20 @@ public class PlayerController : MonoBehaviour
     {
         if(TileHovered != null && Input.GetMouseButtonDown(0) && !Game.BuildWindow.LockMapClick) 
         {
-            if (TileHovered.CanCollect())
+            if(TileHovered.Building != null && TileHovered.Building.ProcessReady)
             {
-                Collect();
-            } else if (TileHovered.TileType == TileType.Building)
+                TileHovered.Building.AddProcessAction();
+            } else
             {
-                if(TileHovered.Building.ActiveBuildingID == -1)
+                if (TileHovered.CanCollect())
                 {
-                    Game.GameplayView.Instance.OpenBuildWindow(TileHovered);
+                    Collect();
+                } else if (TileHovered.TileType == TileType.Building)
+                {
+                    if(TileHovered.Building.ActiveBuildingID == -1)
+                    {
+                        Game.GameplayView.Instance.OpenBuildWindow(TileHovered);
+                    }
                 }
             }
         }
