@@ -150,6 +150,12 @@ public class Collectible : MonoBehaviour
         _CurrentTime = 0;
     }
 
+    public void DestroyNotification()
+    {
+        
+            if(_NotificationObj != null) Destroy(_NotificationObj);
+    }
+
     public void Collect()
     {
         if(_IsCollected) return;

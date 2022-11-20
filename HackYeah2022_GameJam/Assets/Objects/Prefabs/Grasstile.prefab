@@ -104,6 +104,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &3670288867279911185
 Animator:
@@ -241,6 +242,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &253885952798665831
 Animator:
@@ -410,6 +412,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &4936553168378443878
 Animator:
@@ -581,6 +584,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 2615579561308870908}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!114 &-3514668082580213418
 MonoBehaviour:
@@ -716,6 +720,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!1 &4045799766924431112
 GameObject:
@@ -820,6 +825,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &1545885933705024479
 Animator:
@@ -956,6 +962,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!114 &8464773397456332507
 MonoBehaviour:
@@ -1073,6 +1080,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &4445684955206049152
 Animator:
@@ -1210,6 +1218,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &7987131981491978361
 Animator:
@@ -1347,6 +1356,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &4271215339720308347
 Animator:
@@ -1380,7 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943998ecf3a699a449897a304788d9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 150
+  offset: 100
 --- !u!1 &6037577575633126380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1623,7 @@ MonoBehaviour:
   _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
+  _RandomObj: {fileID: 0}
   TileType: 2
 --- !u!95 &7250512790396259437
 Animator:
@@ -1840,6 +1851,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -627607040, guid: 219a2019530f3d145b14d22b4ccb0a64,
         type: 3}
+    - target: {fileID: 2917145613307861562, guid: 4df6933ce4c49c1418e8ee316a1bc8bb,
+        type: 3}
+      propertyPath: offset
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 3799490413242560194, guid: 4df6933ce4c49c1418e8ee316a1bc8bb,
         type: 3}
       propertyPath: m_RootOrder

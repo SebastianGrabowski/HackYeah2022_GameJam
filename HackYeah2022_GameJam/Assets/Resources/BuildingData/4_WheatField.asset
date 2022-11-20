@@ -19,7 +19,7 @@ MonoBehaviour:
   ReqBuildings: []
   BuildTime: 10
   ViewSprite: {fileID: 21300000, guid: e6ac8b5c7f825484dac53bf8785bd112, type: 3}
-  Icon: {fileID: 21300000, guid: 2b6d417684cee0f43ae2753ddd2bff5a, type: 3}
+  Icon: {fileID: 21300000, guid: 248ca6d6ae12a9d4b8bf681fb468d4b9, type: 3}
   ChangePeople: 0
   ProcessSell: 0
   ProcessMoney: 1

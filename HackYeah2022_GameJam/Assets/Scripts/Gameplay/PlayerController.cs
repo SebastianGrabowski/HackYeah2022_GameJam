@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Game.Gameplay.GameplayController.Instance.DestroyHandler(TileHovered.Building._Data);
                     TileHovered.Building.DestroyHandler();
+                    TileHovered.DestroyHandler();
                     TileHovered.Building.Set(-1);
                     TileHovered.CollectibleObj = null;
                 }

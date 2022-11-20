@@ -34,6 +34,13 @@ public class WorldTile : MonoBehaviour
         Building = GetComponent<Game.Gameplay.Building>();
     }
 
+    public void DestroyHandler()
+    {
+        var c = CollectibleObj.GetComponent<Collectible>();
+        if (c != null)
+            c.DestroyNotification();
+    }
+
     private void OnMouseOver()
     {
         _PlayerController.TileHovered = this;
