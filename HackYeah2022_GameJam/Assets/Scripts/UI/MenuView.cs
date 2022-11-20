@@ -25,7 +25,7 @@ public class MenuView : MonoBehaviour
     {
         _TooltipObj.SetActive(true);
         var t = LocalizationController.GetValue("CountryName_" + country.ID);
-        _TooltipMap.text = t;
+        _TooltipMap.text = "<color=orange>Click here to start game with selected country:</color>"+t;
     }
 
     public void HideTooltip()

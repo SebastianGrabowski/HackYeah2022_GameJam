@@ -115,7 +115,7 @@ public class Collectible : MonoBehaviour
             _CurrentTime += Time.deltaTime;
             if(_CurrentTime > _CollectionTime) _CurrentTime = _CollectionTime;
             var time = _CurrentTime / _CollectionTime;
-            Debug.Log("CurrentTime: "+time);
+            
             if(time > 0.33f && time <= 0.66f) 
             {
                 _SpriteRenderer.sprite = _WheatSprites[1];
