@@ -607,6 +607,9 @@ MonoBehaviour:
   ProcessCheckIn: 0
   ProcessTime: 0
   _Data: {fileID: 0}
+  _NotificationAlert: {fileID: 1477268086523845094, guid: b019a409f4ee8bb4681d5b65a120cf95,
+    type: 3}
+  _NotificationOffset: {x: 0, y: 0.5}
 --- !u!1 &3824701172067281723
 GameObject:
   m_ObjectHideFlags: 0
