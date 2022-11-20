@@ -145,6 +145,7 @@ namespace Game.Gameplay
             var gc = Gameplay.GameplayController.Instance;
             gc.Resources[5] += _Data.ProcessMoney;
             if(_NotificationObj != null) Destroy(_NotificationObj);
+            Main.Instance.CoinSFX.Play();
         }
     }
 }

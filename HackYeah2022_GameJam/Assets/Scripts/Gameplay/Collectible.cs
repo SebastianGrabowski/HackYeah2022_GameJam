@@ -108,6 +108,8 @@ public class Collectible : MonoBehaviour
             if(_IsCollected && Time.time >= _TimeToElapse)
             {
                 RespawnWool();
+                
+                Game.Main.Instance.SheepSFX.Play();
             }
         }
         else if(CollectibleType == CollectibleType.Wheat)

@@ -11,6 +11,11 @@ namespace Game
 
         public static int PlayerID;
 
+        public AudioSource CoinSFX;
+        public AudioSource SheepSFX;
+        public AudioSource BuildSFX;
+        public AudioSource DestroySFX;
+
         protected override void OnAwake()
         {
             DontDestroyOnLoad(this);

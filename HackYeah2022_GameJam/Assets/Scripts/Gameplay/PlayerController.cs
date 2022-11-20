@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
             {
                 if(TileHovered.Building != null && TileHovered.Building.ActiveBuildingID != -1 && TileHovered.Building.Build)
                 {
+                    
+                    Game.Main.Instance.DestroySFX.Play();
                     Game.Gameplay.GameplayController.Instance.DestroyHandler(TileHovered.Building._Data);
                     TileHovered.Building.DestroyHandler();
                     TileHovered.DestroyHandler();
