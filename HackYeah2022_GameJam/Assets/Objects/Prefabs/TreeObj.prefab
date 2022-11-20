@@ -46,14 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7df80ef9781844ea28f386d072d61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Amount: 4
   _CollectionTime: 5
   _CollectionProgressOffset: {x: 0, y: 0.4}
   _NotificationOffset: {x: 0, y: 0}
   _Animator: {fileID: 1829016511211246035}
   _SpriteCollected: {fileID: 0}
   _SpriteRenderer: {fileID: 0}
-  _ResourceData: {fileID: 11400000, guid: c60422ca0ceecf7488c79759b6e4e1e6, type: 2}
+  _Amount: 04000000
+  _ResourceData:
+  - {fileID: 11400000, guid: c60422ca0ceecf7488c79759b6e4e1e6, type: 2}
   _ProgressBar: {fileID: 340071534097123851, guid: 8c5c3b9eec80c6d4a83c7c19038a43f8,
     type: 3}
   _NotificationAlert: {fileID: 0}

@@ -12,7 +12,7 @@ public enum CollectibleType
 
 public class Collectible : MonoBehaviour
 {
-    [SerializeField] private int _Amount;
+    
     [SerializeField] private float _CollectionTime;
 
     [SerializeField] private Vector2 _CollectionProgressOffset;
@@ -21,7 +21,14 @@ public class Collectible : MonoBehaviour
     [SerializeField] private Animator _Animator;
     [SerializeField] private Sprite _SpriteCollected;
     [SerializeField] private SpriteRenderer _SpriteRenderer;
-    [SerializeField] private ResourceData _ResourceData;
+
+    [Space(10)]
+
+    [SerializeField] private int[] _Amount;
+    [SerializeField] private ResourceData[] _ResourceData;
+
+    [Space(10)]
+    
     [SerializeField] private ProgressBar _ProgressBar;
 
     [SerializeField] private GameObject _NotificationAlert;
@@ -112,7 +119,12 @@ public class Collectible : MonoBehaviour
             if(_NotificationObj != null) Destroy(_NotificationObj);
             _Animator.SetTrigger("WoolCollect");
             _SpriteRenderer.sprite = _SpriteCollected;
-            Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData.ID, _Amount);
+
+            for(int i = 0; i < _ResourceData.Length; i++)
+            {
+                Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData[i].ID, _Amount[i]);
+            }
+            
         }
 
         _IsCollected = true;
@@ -122,7 +134,11 @@ public class Collectible : MonoBehaviour
     {
         if(_Once) return;
 
-        Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData.ID, _Amount);
+        for(int i = 0; i < _ResourceData.Length; i++)
+        {
+            Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData[i].ID, _Amount[i]);
+        }
+        
         Destroy(this.gameObject);
         _Once = true;
     }

@@ -23,8 +23,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 3ecc3f96446601f48ad1a8399e4d0399, type: 3}
   ChangePeople: 0
   ProcessSell: 1
-  ProcessMoney: 2
+  ProcessMoney: 4
   ProcessTime: 10
   ProcessCost:
   - Resource: {fileID: 11400000, guid: 5c19dbc127576f545814dc1f2c816c48, type: 2}
-    Value: 5
+    Value: 6
