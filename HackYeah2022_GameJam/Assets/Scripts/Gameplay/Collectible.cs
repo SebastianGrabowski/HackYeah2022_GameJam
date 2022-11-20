@@ -107,7 +107,7 @@ public class Collectible : MonoBehaviour
             if(_NotificationObj != null) Destroy(_NotificationObj);
             _Animator.SetTrigger("WoolCollect");
             _SpriteRenderer.sprite = _SpriteCollected;
-            Game.Gameplay.GameplayController.Instance.Resources[_ResourceData.ID] += _Amount;
+            Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData.ID, _Amount);
         }
 
         _IsCollected = true;
@@ -115,7 +115,7 @@ public class Collectible : MonoBehaviour
 
     void Collected()
     {
-        Game.Gameplay.GameplayController.Instance.Resources[_ResourceData.ID] += _Amount;
+        Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData.ID, _Amount);
         Destroy(this.gameObject);
     }
 }

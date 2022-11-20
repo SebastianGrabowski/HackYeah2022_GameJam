@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(TileHovered != null && Input.GetMouseButtonDown(0)) 
+        if(TileHovered != null && Input.GetMouseButtonDown(0) && !Game.BuildWindow.LockMapClick) 
         {
             if (TileHovered.CanCollect())
             {

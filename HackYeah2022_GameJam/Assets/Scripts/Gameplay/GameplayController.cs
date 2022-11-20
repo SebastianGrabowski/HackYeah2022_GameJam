@@ -13,6 +13,11 @@ namespace Game.Gameplay
 
         private float _T;
 
+        public void ChangeResource(int resourceID, int value)
+        {
+            Resources[resourceID] += value;
+        }
+
         protected override void OnAwake()
         {
             Resources = new int[Data.DataController.Instance.ResourceData.Length];
@@ -37,6 +42,19 @@ namespace Game.Gameplay
                 var r = Random.Range(0, Resources.Length);
                 People[r] = Mathf.Clamp(People[r] + Random.Range(-1, 3), 0, 1000);  
             }
+        }
+
+        public bool HasBuilding(int id)
+        {
+            var allBuildings = FindObjectsOfType<Building>();
+            for(var j = 0; j < allBuildings.Length; j++)
+            {
+                if(allBuildings[j].Build && allBuildings[j].ActiveBuildingID == id)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool CanBuild(Data.BuildingData building)
@@ -80,7 +98,7 @@ namespace Game.Gameplay
             {
                 for(var i = 0; i < building.BuildCost.Length; i++)
                 {
-                    Resources[(int)building.BuildCost[i].Resource.ID] -= building.BuildCost[i].Value;
+                    ChangeResource((int)building.BuildCost[i].Resource.ID, -building.BuildCost[i].Value);
                 }
             }
         }

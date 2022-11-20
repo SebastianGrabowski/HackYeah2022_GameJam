@@ -11,11 +11,18 @@ namespace Game
         [SerializeField]private GameObject _View;
         [SerializeField]private UnityEngine.UI.Image _Blocker;
         [SerializeField]private GameObject _Template;
+        [SerializeField]private TextMeshProUGUI _Name;
         [SerializeField]private TextMeshProUGUI _Desc;
+        [SerializeField]private TextMeshProUGUI _Req;
+        [SerializeField]private TextMeshProUGUI[] _ReqResLabels;
+        [SerializeField]private GameObject _ReqLabelHeader;
 
         private List<UnityEngine.UI.Button> _Buttons = new List<UnityEngine.UI.Button>();
 
         private WorldTile _Tile;
+
+        public static bool LockMapClick;
+
 
         private void Start()
         {
@@ -36,6 +43,11 @@ namespace Game
                     (c) =>
                     {
                         _Desc.text = LocalizationController.GetValue("BuildingDesc_" + b.ID.ToString()).ToLower();
+                        _Name.text = LocalizationController.GetValue("BuildingName_" + b.ID.ToString()).ToLower();
+                        _Req.text = GetReqText(b);
+                        var any = SetReqRes(b);
+                        if (any || !string.IsNullOrEmpty(_Req.text))
+                            _ReqLabelHeader.SetActive(true);
                     }
                 );
                 
@@ -44,7 +56,14 @@ namespace Game
                 a2.callback.AddListener(
                     (c) =>
                     {
+                        _ReqLabelHeader.SetActive(false);
                         _Desc.text = string.Empty;
+                        _Name.text = string.Empty;
+                        _Req.text = string.Empty;
+                        for(var i = 0; i < _ReqResLabels.Length; i++)
+                        {
+                            _ReqResLabels[i].transform.parent.gameObject.SetActive(false);
+                        }
                     }
                 );
 
@@ -56,8 +75,53 @@ namespace Game
             }
         }
 
+        private string GetReqText(Data.BuildingData data)
+        {
+            var result = string.Empty;
+            if(data.ReqBuildings != null)
+            {
+                for(var i = 0; i < data.ReqBuildings.Length; i++)
+                {
+                    var b = data.ReqBuildings;
+                    var has = Game.Gameplay.GameplayController.Instance.HasBuilding(b[i].ID);
+                    var bName = LocalizationController.GetValue("BuildingName_" + b[i].ID.ToString()).ToUpper();
+                    if (has)
+                    {
+                        result += "<color=green>" + bName + "</color>" + (i < (data.ReqBuildings.Length-1) ? ", " : "");
+                    } else
+                    {
+                        result += "<color=red>" + bName + "</color>" + (i < (data.ReqBuildings.Length-1) ? ", " : "");
+                    }
+                }
+            }
+            return result;
+        }
+
+        private bool SetReqRes(Data.BuildingData data)
+        {
+            var result = false;
+            for(var i = 0; i < _ReqResLabels.Length; i++)
+            {
+                _ReqResLabels[i].transform.parent.gameObject.SetActive(false);
+            }
+            if(data.BuildCost != null)
+            {
+                for(var i = 0; i < data.BuildCost.Length; i++)
+                {
+                    result = true;
+                    var res = data.BuildCost[i].Resource.ID;
+                    _ReqResLabels[res].transform.parent.gameObject.SetActive(true);
+                    _ReqResLabels[res].transform.parent.gameObject.SetActive(true);
+                    _ReqResLabels[res].text = data.BuildCost[i].Value.ToString();
+                    _ReqResLabels[res].color = (Gameplay.GameplayController.Instance.Resources[res] >= data.BuildCost[i].Value) ? Color.green : Color.red;
+                }
+            }
+            return result;
+        }
+
         public void Open(WorldTile tile)
         {
+            LockMapClick = true;
             _Tile = tile;
             _Blocker.enabled = true;
             _View.SetActive(true);
@@ -85,6 +149,7 @@ namespace Game
         {
             _Blocker.enabled = false;
             _View.SetActive(false);
+            LockMapClick = false;
         }
     }
 }
