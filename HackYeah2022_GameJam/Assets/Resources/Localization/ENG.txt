@@ -27,7 +27,7 @@ BuildingName_0;Mill
 BuildingName_1;Sawmill
 BuildingName_2;Dairy
 BuildingName_3;Wool Spinning Mill 
-BuildingName_4;Butcher
+BuildingName_4;Wheat field
 BuildingName_5;Sheep farm
 BuildingName_6;House
 BuildingName_7;Big house
@@ -36,7 +36,7 @@ BuildingDesc_0;Desc Mill
 BuildingDesc_1;Desc Sawmill
 BuildingDesc_2;Desc Dairy
 BuildingDesc_3;Desc Wool Spinning Mill 
-BuildingDesc_4;Desc Butcher
+BuildingDesc_4;Desc Wheat field
 BuildingDesc_5;Desc Sheep farm
 BuildingDesc_6;Desc House
 BuildingDesc_7;Desc Big house
