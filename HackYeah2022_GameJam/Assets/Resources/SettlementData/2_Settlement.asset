@@ -15,6 +15,6 @@ MonoBehaviour:
   ID: 2
   Country: {fileID: 11400000, guid: e741c8b8d8c6b0e43be97632a7d04ef9, type: 2}
   MapPosition: {x: 0, y: 0}
-  StartMoney: 50
-  StartResources: 050000000a00000003000000040000000000000000000000
+  StartMoney: 40
+  StartResources: 000000000a00000000000000000000000000000000000000
   StartPeople: 22
