@@ -34,9 +34,6 @@ namespace Game
 
         private void Update()
         {
-            var gc = Gameplay.GameplayController.Instance;
-            _MoneyLabel.text = gc.Money.ToString();
-            _PeopleLabel.text = gc.People[4].ToString();
         }
     }
 }

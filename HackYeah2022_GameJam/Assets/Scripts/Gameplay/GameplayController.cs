@@ -7,7 +7,6 @@ namespace Game.Gameplay
 
     public class GameplayController : MonoSingleton<GameplayController>
     {
-        [HideInInspector]public int Money;
         [HideInInspector]public int[] Resources;
         [HideInInspector]public int[] People;
 
@@ -28,7 +27,6 @@ namespace Game.Gameplay
             {
                 Resources[i] = settlement.StartResources[i];
             }
-            Money = settlement.StartMoney;
             People[4] = settlement.StartPeople;
         }
 
