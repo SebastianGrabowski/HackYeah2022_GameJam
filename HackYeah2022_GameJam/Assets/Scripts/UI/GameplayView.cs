@@ -11,11 +11,16 @@ namespace Game
         [SerializeField]private TextMeshProUGUI _PeopleLabel;
         [SerializeField]private BuildWindow _BuildWindow;
 
+        [Header("Destroy")]
+        [SerializeField]private UnityEngine.UI.Image _DestroyIcon;
+        [SerializeField]private GameObject _DestroyLabel;
+
         public static GameplayView Instance;
 
         private void Awake()
         {
             Instance = this;
+            _DestroyIcon.color = Color.gray;
         }
 
         public void BreakGame()
@@ -34,6 +39,13 @@ namespace Game
 
         private void Update()
         {
+        }
+
+        public void DestroyClickHandler()
+        {
+            Gameplay.GameplayController.Instance.DestroyBuildingMode = !Gameplay.GameplayController.Instance.DestroyBuildingMode;
+            _DestroyIcon.color = Gameplay.GameplayController.Instance.DestroyBuildingMode ? Color.white : Color.gray;
+            _DestroyLabel.SetActive(Gameplay.GameplayController.Instance.DestroyBuildingMode);
         }
     }
 }
