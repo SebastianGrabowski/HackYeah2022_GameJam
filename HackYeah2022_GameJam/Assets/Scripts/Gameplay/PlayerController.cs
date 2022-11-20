@@ -10,19 +10,31 @@ public class PlayerController : MonoBehaviour
     {
         if(TileHovered != null && Input.GetMouseButtonDown(0) && !Game.BuildWindow.LockMapClick) 
         {
-            if(TileHovered.Building != null && TileHovered.Building.ProcessReady)
+            if (Game.Gameplay.GameplayController.Instance.DestroyBuildingMode)
             {
-                TileHovered.Building.AddProcessAction();
+                if(TileHovered.Building != null && TileHovered.Building.ActiveBuildingID != -1 && TileHovered.Building.Build)
+                {
+                    Game.Gameplay.GameplayController.Instance.DestroyHandler(TileHovered.Building._Data);
+                    TileHovered.Building.DestroyHandler();
+                    TileHovered.Building.Set(-1);
+                    TileHovered.CollectibleObj = null;
+                }
             } else
             {
-                if (TileHovered.CanCollect())
+                if(TileHovered.Building != null && TileHovered.Building.ProcessReady)
                 {
-                    Collect();
-                } else if (TileHovered.TileType == TileType.Building)
+                    TileHovered.Building.AddProcessAction();
+                } else
                 {
-                    if(TileHovered.Building.ActiveBuildingID == -1)
+                    if (TileHovered.CanCollect())
                     {
-                        Game.GameplayView.Instance.OpenBuildWindow(TileHovered);
+                        Collect();
+                    } else if (TileHovered.TileType == TileType.Building)
+                    {
+                        if(TileHovered.Building.ActiveBuildingID == -1)
+                        {
+                            Game.GameplayView.Instance.OpenBuildWindow(TileHovered);
+                        }
                     }
                 }
             }

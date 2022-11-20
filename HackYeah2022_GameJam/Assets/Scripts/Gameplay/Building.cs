@@ -21,6 +21,7 @@ namespace Game.Gameplay
 
         public Data.BuildingData _Data;
 
+        private ProgressBar _ProcessProgress;
 
         public void Set(int buildingDataID)
         {
@@ -64,6 +65,14 @@ namespace Game.Gameplay
             //_Renderer.color = Color.white;
         }
 
+        public void DestroyHandler()
+        {
+            if (_ProcessProgress != null && _ProcessProgress.gameObject != null)
+            {
+                Destroy(_ProcessProgress.gameObject);
+            }
+        }
+
         private void Update()
         {
             if(Build && _Data != null && _Data.ProcessSell)
@@ -76,10 +85,10 @@ namespace Game.Gameplay
                         ProcessCheckIn = false;
                         
                         var spawnPos = new Vector2(transform.position.x, transform.position.y);
-                        var progressBar = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
-                        progressBar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                        progressBar.SetProgressValue(_Data.ProcessTime);
-                        Destroy(progressBar.gameObject, _Data.ProcessTime);
+                        _ProcessProgress = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
+                        _ProcessProgress.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        _ProcessProgress.SetProgressValue(_Data.ProcessTime);
+                        Destroy(_ProcessProgress.gameObject, _Data.ProcessTime);
 
                     }
                 } else if (!ProcessReady)
