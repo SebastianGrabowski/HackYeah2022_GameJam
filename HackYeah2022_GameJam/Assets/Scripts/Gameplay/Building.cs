@@ -15,6 +15,13 @@ namespace Game.Gameplay
         
         [SerializeField]private GameObject[] _Renderers;
 
+        public bool ProcessReady;
+        public bool ProcessCheckIn = false;
+        public float ProcessTime;
+
+        public Data.BuildingData _Data;
+
+
         public void Set(int buildingDataID)
         {
             ActiveBuildingID = buildingDataID;
@@ -26,7 +33,7 @@ namespace Game.Gameplay
 
             if(ActiveBuildingID != -1)
             {
-
+                _Data = Data.DataController.Instance.GetBuildingData(ActiveBuildingID);
                 var spawnPos = new Vector2(transform.position.x, transform.position.y);
                 var progressBar = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
                 progressBar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -41,6 +48,9 @@ namespace Game.Gameplay
                 //_Renderer.sprite = data.ViewSprite;
 
                 Invoke("BuildDone", data.BuildTime);
+            } else
+            {
+                _Data = null;
             }
         }
 
@@ -50,7 +60,71 @@ namespace Game.Gameplay
             Build = true;
             var data = Data.DataController.Instance.GetBuildingData(ActiveBuildingID);
             Gameplay.GameplayController.Instance.BuildEndHandler(data);
+            ProcessCheckIn = true;
             //_Renderer.color = Color.white;
+        }
+
+        private void Update()
+        {
+            if(Build && _Data != null && _Data.ProcessSell)
+            {
+                if (ProcessCheckIn)
+                {
+                    if (TryRunProcess())
+                    {
+                        ProcessReady = false;
+                        ProcessCheckIn = false;
+                        
+                        var spawnPos = new Vector2(transform.position.x, transform.position.y);
+                        var progressBar = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
+                        progressBar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                        progressBar.SetProgressValue(_Data.ProcessTime);
+                        Destroy(progressBar.gameObject, _Data.ProcessTime);
+
+                    }
+                } else if (!ProcessReady)
+                {
+                    ProcessTime += Time.deltaTime;
+                    if(ProcessTime >= _Data.ProcessTime)
+                    {
+                        ProcessReady = true;
+                    }
+                }
+            }
+            
+        }
+
+        public bool TryRunProcess()
+        {
+            var gc = Gameplay.GameplayController.Instance;
+            if(_Data.ProcessCost != null)
+            {
+                for(var i = 0; i < _Data.ProcessCost.Length; i++)
+                {
+                    var res = _Data.ProcessCost[i].Resource.ID;
+                    var value = _Data.ProcessCost[i].Value;
+                    if (gc.Resources[res] < value)
+                    {
+                        return false;
+                    }
+                }
+                
+                for(var i = 0; i < _Data.ProcessCost.Length; i++)
+                {
+                    var res = _Data.ProcessCost[i].Resource.ID;
+                    var value = _Data.ProcessCost[i].Value;
+                    gc.ChangeResource(res, -value);
+                }
+            }
+            return true;
+        }
+        public void AddProcessAction()
+        {
+            ProcessCheckIn = true;
+            ProcessReady = false;
+            //add resources here
+            var gc = Gameplay.GameplayController.Instance;
+            gc.Resources[5] += _Data.ProcessMoney;
         }
     }
 }

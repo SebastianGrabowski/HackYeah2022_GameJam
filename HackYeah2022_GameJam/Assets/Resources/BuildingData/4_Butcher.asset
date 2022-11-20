@@ -19,3 +19,10 @@ MonoBehaviour:
   BuildTime: 10
   ViewSprite: {fileID: 21300000, guid: e6ac8b5c7f825484dac53bf8785bd112, type: 3}
   Icon: {fileID: 0}
+  ChangePeople: 0
+  ProcessSell: 1
+  ProcessMoney: 1
+  ProcessTime: 15
+  ProcessCost:
+  - Resource: {fileID: 11400000, guid: 29de894bdd8053e42821a84da93946d4, type: 2}
+    Value: 2
