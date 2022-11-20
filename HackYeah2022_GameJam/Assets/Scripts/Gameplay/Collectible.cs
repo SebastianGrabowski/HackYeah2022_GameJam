@@ -147,6 +147,7 @@ public class Collectible : MonoBehaviour
         _SpriteRenderer.sprite = _WheatSprites[2];
         _IsCollected = false;
         _Animator.enabled = false;
+        _CurrentTime = 0;
     }
 
     public void Collect()
