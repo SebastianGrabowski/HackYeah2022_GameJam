@@ -776,7 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520bc1842d5b0c44eb926e4f1f28c080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 0
   Resources: 
   People: 
 --- !u!4 &684502080
@@ -2137,7 +2136,7 @@ PrefabInstance:
     - target: {fileID: 5604693563127797386, guid: 94b16422dcc9c1c4e8b322a42febaa0e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5604693563127797386, guid: 94b16422dcc9c1c4e8b322a42febaa0e,
         type: 3}
@@ -2182,7 +2181,7 @@ PrefabInstance:
     - target: {fileID: 5604693563127797386, guid: 94b16422dcc9c1c4e8b322a42febaa0e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 5604693563127797386, guid: 94b16422dcc9c1c4e8b322a42febaa0e,
         type: 3}
