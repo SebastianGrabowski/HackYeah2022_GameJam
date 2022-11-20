@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3799490413242560197}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8857600740441195612}
@@ -49,10 +49,15 @@ MonoBehaviour:
   _Amount: 4
   _CollectionTime: 5
   _CollectionProgressOffset: {x: 0, y: 0.4}
+  _NotificationOffset: {x: 0, y: 0}
   _Animator: {fileID: 1829016511211246035}
+  _SpriteCollected: {fileID: 0}
+  _SpriteRenderer: {fileID: 0}
   _ResourceData: {fileID: 11400000, guid: c60422ca0ceecf7488c79759b6e4e1e6, type: 2}
   _ProgressBar: {fileID: 340071534097123851, guid: 8c5c3b9eec80c6d4a83c7c19038a43f8,
     type: 3}
+  _NotificationAlert: {fileID: 0}
+  CollectibleType: 0
 --- !u!95 &1829016511211246035
 Animator:
   serializedVersion: 4
