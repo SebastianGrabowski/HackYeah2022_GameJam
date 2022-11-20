@@ -30,7 +30,7 @@ public class WorldTile : MonoBehaviour
     private void OnMouseOver()
     {
         _PlayerController.TileHovered = this;
-        _Indicator.UpdateIndicatorPosition(this.transform.position);
+        if(TileType != TileType.Mountains) _Indicator.UpdateIndicatorPosition(this.transform.position);
     }
 
     private void OnMouseExit()
