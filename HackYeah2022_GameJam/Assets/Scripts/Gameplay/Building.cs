@@ -48,6 +48,8 @@ namespace Game.Gameplay
         {
             _Renderers[ActiveBuildingID].SetActive(true);
             Build = true;
+            var data = Data.DataController.Instance.GetBuildingData(ActiveBuildingID);
+            Gameplay.GameplayController.Instance.BuildEndHandler(data);
             //_Renderer.color = Color.white;
         }
     }
