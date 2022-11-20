@@ -16,6 +16,8 @@ public class WorldTile : MonoBehaviour
 
     [HideInInspector] public GameObject CollectibleObj;
     [HideInInspector] public Game.Gameplay.Building Building;
+    [SerializeField]private GameObject _RandomObj;
+
 
 
     public TileType TileType;
@@ -24,6 +26,8 @@ public class WorldTile : MonoBehaviour
     
     private void Awake()
     {
+        if (_RandomObj != null)
+            _RandomObj.gameObject.SetActive(Random.Range(0, 100) > 70);
         _Indicator = FindObjectOfType<Indicator>();
         _PlayerController = FindObjectOfType<PlayerController>();
         Building = GetComponent<Game.Gameplay.Building>();

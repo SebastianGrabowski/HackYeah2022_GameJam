@@ -637,7 +637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307376053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.95, y: -4, z: 0}
+  m_LocalPosition: {x: -11.1, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -656,8 +656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127faba95b825304384dd6a0509f36d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _RowAmount: 1
-  _TileAmount: 16
+  _RowAmount: 2
+  _TileAmount: 21
   _TileOffset: {x: 1.15, y: -1.15}
   _Tile: {fileID: -8135852339477162442, guid: da129f649b8f1914c9d52f42d89b0309, type: 3}
 --- !u!1 &309085870
@@ -722,7 +722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337741907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.95, y: 4, z: 0}
+  m_LocalPosition: {x: -11.1, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _RowAmount: 7
-  _TileAmount: 1
+  _TileAmount: 2
   _TileOffset: {x: 1.15, y: -1.15}
   _Tile: {fileID: -8135852339477162442, guid: da129f649b8f1914c9d52f42d89b0309, type: 3}
 --- !u!1 &447290618
@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _RowAmount: 9
-  _TileAmount: 1
+  _TileAmount: 2
   _TileOffset: {x: 1.15, y: -1.15}
   _Tile: {fileID: -8135852339477162442, guid: da129f649b8f1914c9d52f42d89b0309, type: 3}
 --- !u!1 &1177741105
@@ -1376,7 +1376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1355636170
 Transform:
   m_ObjectHideFlags: 0
@@ -1530,7 +1530,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4530978, g: 0.19215688, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.09638661, g: 0.3584906, b: 0.10543148, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2102,7 +2102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011536923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.95, y: 5.15, z: 0}
+  m_LocalPosition: {x: -11.1, y: 6.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2121,8 +2121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127faba95b825304384dd6a0509f36d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _RowAmount: 1
-  _TileAmount: 16
+  _RowAmount: 2
+  _TileAmount: 21
   _TileOffset: {x: 1.15, y: -1.15}
   _Tile: {fileID: -8135852339477162442, guid: da129f649b8f1914c9d52f42d89b0309, type: 3}
 --- !u!1 &2011761835

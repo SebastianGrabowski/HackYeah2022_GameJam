@@ -9,6 +9,8 @@ namespace Game
     public class Main : MonoSingleton<Main>
     {
 
+        public static int PlayerID;
+
         protected override void OnAwake()
         {
             DontDestroyOnLoad(this);
