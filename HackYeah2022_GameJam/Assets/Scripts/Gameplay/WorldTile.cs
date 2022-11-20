@@ -36,9 +36,12 @@ public class WorldTile : MonoBehaviour
 
     public void DestroyHandler()
     {
-        var c = CollectibleObj.GetComponent<Collectible>();
-        if (c != null)
-            c.DestroyNotification();
+        if (CollectibleObj != null)
+        {
+            var c = CollectibleObj.GetComponent<Collectible>();
+            if (c != null)
+                c.DestroyNotification();
+        }
     }
 
     public IndicatorIconType ic;
