@@ -15,12 +15,16 @@ MonoBehaviour:
   ID: 7
   BuildCost:
   - Resource: {fileID: 11400000, guid: c60422ca0ceecf7488c79759b6e4e1e6, type: 2}
-    Value: 5
+    Value: 20
   - Resource: {fileID: 11400000, guid: a9aab93f343673b49b49244dea5bad01, type: 2}
     Value: 15
   ReqBuildings:
   - {fileID: 11400000, guid: 5b4b8571e1e313147b370f0000132ade, type: 2}
   BuildTime: 10
   ViewSprite: {fileID: 21300000, guid: 5c35aefb0965746fc8ade2cd405f2ac7, type: 3}
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 6244941554aedb940bbebe9ccc50e304, type: 3}
   ChangePeople: 15
+  ProcessSell: 0
+  ProcessMoney: 0
+  ProcessTime: 0
+  ProcessCost: []

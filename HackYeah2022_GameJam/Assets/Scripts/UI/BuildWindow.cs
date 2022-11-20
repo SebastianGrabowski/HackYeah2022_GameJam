@@ -4,6 +4,7 @@ namespace Game
     using System.Collections.Generic;
     using UnityEngine;
     using TMPro;
+    using UnityEngine.UI;
 
     public class BuildWindow : MonoBehaviour
     {
@@ -36,6 +37,8 @@ namespace Game
                 var button = newItem.GetComponent<UnityEngine.UI.Button>();
                 _Buttons.Add(button);
                 var e = newItem.GetComponent<UnityEngine.EventSystems.EventTrigger>();
+
+                newItem.transform.GetChild(0).GetComponent<Image>().sprite = b.Icon;
 
                 UnityEngine.EventSystems.EventTrigger.Entry a1 = new UnityEngine.EventSystems.EventTrigger.Entry();
                 a1.eventID = UnityEngine.EventSystems.EventTriggerType.PointerEnter;

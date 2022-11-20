@@ -32,7 +32,24 @@ public class WorldTile : MonoBehaviour
     private void OnMouseOver()
     {
         _PlayerController.TileHovered = this;
-        if(TileType != TileType.Mountains) _Indicator.UpdateIndicatorPosition(this.transform.position);
+        IndicatorIconType indicatorIconType = IndicatorIconType.None;
+
+        if(CollectibleObj != null && CanCollect()) 
+        {
+            if(CollectibleObj.GetComponent<Collectible>().CollectibleType == CollectibleType.Wood) indicatorIconType = IndicatorIconType.WoodCollect;
+            else if(CollectibleObj.GetComponent<Collectible>().CollectibleType == CollectibleType.Wood) indicatorIconType = IndicatorIconType.WoolCollect;
+            else if(CollectibleObj.GetComponent<Collectible>().CollectibleType == CollectibleType.Wheat) indicatorIconType = IndicatorIconType.WheatCollect;
+        }
+
+        if(Building != null && Building.ActiveBuildingID != -1 && Game.Gameplay.GameplayController.Instance.DestroyBuildingMode) indicatorIconType = IndicatorIconType.BuildingDestroy;
+        else if(Building != null && Building.ActiveBuildingID != -1 && !Game.Gameplay.GameplayController.Instance.DestroyBuildingMode) 
+        {
+            if(Building.ActiveBuildingID == 5) indicatorIconType = IndicatorIconType.WoolCollect;
+            else if(Building.ActiveBuildingID == 0) indicatorIconType = IndicatorIconType.WheatCollect;
+        }
+        else if(CollectibleObj == null) indicatorIconType = IndicatorIconType.Build;
+        
+        if(TileType != TileType.Mountains) _Indicator.UpdateIndicatorPosition(this.transform.position, indicatorIconType);
     }
 
     private void OnMouseExit()
