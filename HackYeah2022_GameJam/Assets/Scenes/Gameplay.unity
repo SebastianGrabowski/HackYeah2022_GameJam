@@ -687,6 +687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca3560f749cb6249b299cdbc8929ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _TreeRespawnTime: 8
+  _MaxTreesAtOnce: 6
+  _MinTreesAmount: 2
   _ObjectData:
   - TileType: 2
     Object: {fileID: 3799490413242560197, guid: 87b66ed10fa99c143ab2a6deecca6134,

@@ -26,13 +26,15 @@ public class Collectible : MonoBehaviour
 
     [SerializeField] private GameObject _NotificationAlert;
 
-    [SerializeField] private CollectibleType _CollectibleType;
+    public CollectibleType CollectibleType;
 
+    private WorldGenerator _WorldGenerator;
     private GameObject _NotificationObj;
     private Sprite _StartSprite;
 
     private bool _CanBeCollected;
-    private bool _IsCollected; 
+    private bool _IsCollected;
+    private bool _Once = false;
     private bool _IsOver;
 
     private float _TimeToElapse = 0;
@@ -40,6 +42,8 @@ public class Collectible : MonoBehaviour
 
     void Awake()
     {
+        _WorldGenerator = FindObjectOfType<WorldGenerator>();
+
         if (_SpriteRenderer != null)
             _StartSprite = _SpriteRenderer.sprite;
     }
@@ -62,15 +66,16 @@ public class Collectible : MonoBehaviour
 
     void Update()
     {
-        if(_CollectibleType == CollectibleType.Wood)
+        if(CollectibleType == CollectibleType.Wood)
         {
             if(_IsCollected && Time.time >= _TimeToElapse)
             {
+                _WorldGenerator.OnTreeCollected();
                 _Animator.SetTrigger("Collect");
                 Invoke(nameof(Collected), 1f);
             }
         }
-        else if(_CollectibleType == CollectibleType.Wool)
+        else if(CollectibleType == CollectibleType.Wool)
         {
             if(_IsCollected && Time.time >= _TimeToElapse)
             {
@@ -102,7 +107,7 @@ public class Collectible : MonoBehaviour
 
         Destroy(progressBar.gameObject, (_CollectionTime - 0.05f));
 
-        if(_CollectibleType == CollectibleType.Wool) 
+        if(CollectibleType == CollectibleType.Wool) 
         {
             if(_NotificationObj != null) Destroy(_NotificationObj);
             _Animator.SetTrigger("WoolCollect");
@@ -115,7 +120,11 @@ public class Collectible : MonoBehaviour
 
     void Collected()
     {
+        if(_Once) return;
+        
+        Debug.Log("Tree collected");
         Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData.ID, _Amount);
         Destroy(this.gameObject);
+        _Once = true;
     }
 }
