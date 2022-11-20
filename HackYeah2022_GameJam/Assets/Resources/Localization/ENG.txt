@@ -21,6 +21,7 @@ ResourceName_1;Wheat
 ResourceName_2;Meat
 ResourceName_3;Milk
 ResourceName_4;Wool
+ResourceName_5;Coins
 -
 BuildingName_0;Mill
 BuildingName_1;Sawmill
