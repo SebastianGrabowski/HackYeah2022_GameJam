@@ -178,10 +178,9 @@ GameObject:
   - component: {fileID: 3799490413242560194}
   - component: {fileID: 3799490413242560195}
   - component: {fileID: 3199981524336525966}
-  - component: {fileID: 2739234445086099797}
-  - component: {fileID: -3514668082580213418}
+  - component: {fileID: -8135852339477162442}
   m_Layer: 0
-  m_Name: Grasstile
+  m_Name: MountainTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,7 +250,7 @@ SpriteRenderer:
   m_SortingLayerID: 1549583839
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -540092246, guid: 219a2019530f3d145b14d22b4ccb0a64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1adaf33821ea914eaccb16bbbf438a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -288,7 +287,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &2739234445086099797
+--- !u!114 &-8135852339477162442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,32 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
-  TileType: 2
---- !u!114 &-3514668082580213418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3799490413242560197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae5a102b7b1d8f4fad67e7b4831484d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ProgressBar: {fileID: 340071534097123851, guid: 8c5c3b9eec80c6d4a83c7c19038a43f8,
-    type: 3}
-  ActiveBuildingID: -1
-  Build: 0
-  _Renderers:
-  - {fileID: 3824701172067281723}
-  - {fileID: 9035107739903159371}
-  - {fileID: 7255680998498512911}
-  - {fileID: 7776902497445466276}
-  - {fileID: 8338163739040966044}
-  - {fileID: 7186955765768787854}
-  - {fileID: 2414929024820988670}
-  - {fileID: 6037577575633126380}
+  TileType: 3
 --- !u!1 &3824701172067281723
 GameObject:
   m_ObjectHideFlags: 0
