@@ -12,6 +12,8 @@ public enum TileType
 
 public class WorldTile : MonoBehaviour
 {
+    [SerializeField] private GameObject _SheepCollectibleObj;
+
     [HideInInspector] public GameObject CollectibleObj;
     [HideInInspector] public Game.Gameplay.Building Building;
 
@@ -49,5 +51,6 @@ public class WorldTile : MonoBehaviour
     public void Build(int buildingDataID)
     {
         Building.Set(buildingDataID);
+        if(Building.ActiveBuildingID == 5) CollectibleObj = _SheepCollectibleObj;
     }
 }

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -235,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -402,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -571,6 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 2615579561308870908}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -701,6 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -803,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -937,6 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -1052,6 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -1187,6 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -1451,6 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -1618,6 +1628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17dd205870f20d49b7c65e311a0d5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SheepCollectibleObj: {fileID: 0}
   CollectibleObj: {fileID: 0}
   Building: {fileID: 0}
   TileType: 2
@@ -1763,11 +1774,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SheepObj
       objectReference: {fileID: 0}
+    - target: {fileID: 3799490413242560197, guid: 2266fbd4523649141832cf77d7eb21e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2266fbd4523649141832cf77d7eb21e9, type: 3}
 --- !u!4 &2615579561308870907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3799490413242560194, guid: 2266fbd4523649141832cf77d7eb21e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1222419052002375225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2615579561308870908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3799490413242560197, guid: 2266fbd4523649141832cf77d7eb21e9,
     type: 3}
   m_PrefabInstance: {fileID: 1222419052002375225}
   m_PrefabAsset: {fileID: 0}

@@ -20,7 +20,7 @@ namespace Game.Gameplay
         {
             Resources[resourceID] += value;
             ResourceAmountPopup resourceAmountPopup = Instantiate(_ResourceAmountPopup, ResourceObjects[resourceID].transform);
-            resourceAmountPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
+            resourceAmountPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -0.5f);
             resourceAmountPopup.SetAmount(value);
             
             Destroy(resourceAmountPopup.gameObject, 1.5f);

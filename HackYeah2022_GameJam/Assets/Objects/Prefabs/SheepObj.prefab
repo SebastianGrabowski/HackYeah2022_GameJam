@@ -58,7 +58,7 @@ MonoBehaviour:
     type: 3}
   _NotificationAlert: {fileID: 1477268086523845094, guid: b019a409f4ee8bb4681d5b65a120cf95,
     type: 3}
-  _CollectibleType: 1
+  CollectibleType: 1
 --- !u!95 &1829016511211246035
 Animator:
   serializedVersion: 4
