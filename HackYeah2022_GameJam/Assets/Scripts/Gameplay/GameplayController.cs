@@ -16,6 +16,8 @@ namespace Game.Gameplay
 
         private float _T;
 
+        public bool DestroyBuildingMode;
+
         public void ChangeResource(int resourceID, int value)
         {
             Resources[resourceID] += value;
