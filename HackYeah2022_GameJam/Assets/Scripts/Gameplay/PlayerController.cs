@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
             {
                 if(TileHovered.Building != null && TileHovered.Building.ActiveBuildingID != -1 && TileHovered.Building.Build)
                 {
+                    
+                    Game.Main.Instance.DestroySFX.Play();
                     Game.Gameplay.GameplayController.Instance.DestroyHandler(TileHovered.Building._Data);
                     TileHovered.Building.DestroyHandler();
                     TileHovered.DestroyHandler();
@@ -29,6 +31,15 @@ public class PlayerController : MonoBehaviour
                 {
                     if (TileHovered.CanCollect())
                     {
+
+                        if(TileHovered.ic == IndicatorIconType.WheatCollect)
+                            Game.Main.Instance.ScytheSFX.Play();
+        
+                        if(TileHovered.ic == IndicatorIconType.WoodCollect)
+                            Game.Main.Instance.ScytheSFX.Play();
+        
+                        if(TileHovered.ic == IndicatorIconType.WoolCollect)
+                            Game.Main.Instance.SheepSFX.Play();
                         Collect();
                     } else if (TileHovered.TileType == TileType.Building)
                     {

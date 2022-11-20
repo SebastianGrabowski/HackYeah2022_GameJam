@@ -141,6 +141,8 @@ namespace Game
                 b.onClick.AddListener(()=>{ 
                     var k = j;
                     _Tile.Build(k);
+                    
+                    Game.Main.Instance.BuildSFX.Play();
                     Close();
                     gameplayController.BuildHandler(data);
                 });
