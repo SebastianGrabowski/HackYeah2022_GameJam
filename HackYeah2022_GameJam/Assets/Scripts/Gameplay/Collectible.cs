@@ -45,6 +45,7 @@ public class Collectible : MonoBehaviour
     private bool _IsCollected;
     private bool _Once = false;
     private bool _IsOver;
+    private bool _FirstTime = false;
 
     private float _TimeToElapse = 0f;
     private float _CurrentTime = 0f;
@@ -64,6 +65,7 @@ public class Collectible : MonoBehaviour
         {
             _TimeToElapse = Time.time + _CollectionTime;
             _IsCollected = true;
+            _FirstTime = true;
 
             var spawnPos = new Vector2(transform.position.x + _CollectionProgressOffset.x, transform.position.y + _CollectionProgressOffset.y);
             var progressBar = Instantiate(_ProgressBar, spawnPos, Quaternion.identity);
@@ -115,18 +117,34 @@ public class Collectible : MonoBehaviour
         }
         else if(CollectibleType == CollectibleType.Wheat)
         {
-            _CurrentTime += Time.deltaTime;
-            if(_CurrentTime > _CollectionTime) _CurrentTime = _CollectionTime;
-            var time = _CurrentTime / _CollectionTime;
-            
-            if(time > 0.33f && time <= 0.66f) 
+            if(_FirstTime)
             {
-                _SpriteRenderer.sprite = _WheatSprites[1];
-                _Animator.enabled = false;
+                _CurrentTime += Time.deltaTime;
+                if(_CurrentTime > _CollectionTime) _CurrentTime = _CollectionTime;
+                var time = _CurrentTime / _CollectionTime;
+                
+                if(time > 0.33f && time <= 0.66f) 
+                {
+                    _SpriteRenderer.sprite = _WheatSprites[1];
+                    _Animator.enabled = false;
+                }
             }
 
             if(_IsCollected && Time.time >= _TimeToElapse)
             {
+                if(!_FirstTime)
+                {
+                    _CurrentTime += Time.deltaTime;
+                    if(_CurrentTime > _CollectionTime) _CurrentTime = _CollectionTime;
+                    var time = _CurrentTime / _CollectionTime;
+                    
+                    if(time > 0.33f && time <= 0.66f) 
+                    {
+                        _SpriteRenderer.sprite = _WheatSprites[1];
+                        _Animator.enabled = false;
+                    }
+                }
+
                 Game.Main.Instance.ScytheSFX.Play();
                 RespawnWheat();
             }
@@ -152,6 +170,7 @@ public class Collectible : MonoBehaviour
         _IsCollected = false;
         _Animator.enabled = false;
         _CurrentTime = 0;
+        _FirstTime = false;
     }
 
     public void DestroyNotification()
