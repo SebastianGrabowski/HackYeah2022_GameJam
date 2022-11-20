@@ -12,6 +12,7 @@ public enum TileType
 
 public class WorldTile : MonoBehaviour
 {
+    [SerializeField] private GameObject _WheatCollectibleObj;
     [SerializeField] private GameObject _SheepCollectibleObj;
 
     [HideInInspector] public GameObject CollectibleObj;
@@ -45,7 +46,7 @@ public class WorldTile : MonoBehaviour
         else if(Building != null && Building.ActiveBuildingID != -1 && !Game.Gameplay.GameplayController.Instance.DestroyBuildingMode) 
         {
             if(Building.ActiveBuildingID == 5) indicatorIconType = IndicatorIconType.WoolCollect;
-            else if(Building.ActiveBuildingID == 0) indicatorIconType = IndicatorIconType.WheatCollect;
+            else if(Building.ActiveBuildingID == 0 || Building.ActiveBuildingID == 4) indicatorIconType = IndicatorIconType.WheatCollect;
         }
         else if(CollectibleObj == null) indicatorIconType = IndicatorIconType.Build;
         
@@ -68,6 +69,8 @@ public class WorldTile : MonoBehaviour
     public void Build(int buildingDataID)
     {
         Building.Set(buildingDataID);
-        if(Building.ActiveBuildingID == 5) CollectibleObj = _SheepCollectibleObj;
+        
+        if(Building.ActiveBuildingID == 4) CollectibleObj = _WheatCollectibleObj;
+        else if(Building.ActiveBuildingID == 5) CollectibleObj = _SheepCollectibleObj;
     }
 }

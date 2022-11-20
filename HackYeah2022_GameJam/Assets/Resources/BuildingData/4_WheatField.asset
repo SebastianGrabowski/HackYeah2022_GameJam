@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6da8ac53a24abf419fa236dbe18636a, type: 3}
-  m_Name: 4_Butcher
+  m_Name: 4_WheatField
   m_EditorClassIdentifier: 
   ID: 4
   BuildCost:
-  - Resource: {fileID: 11400000, guid: c60422ca0ceecf7488c79759b6e4e1e6, type: 2}
-    Value: 25
-  ReqBuildings:
-  - {fileID: 11400000, guid: 3e4f7aa27ba2da649a1ccfeaeec792d8, type: 2}
+  - Resource: {fileID: 11400000, guid: bc2b7bdd8b9df6a41b0c78acda007e15, type: 2}
+    Value: 10
+  ReqBuildings: []
   BuildTime: 10
   ViewSprite: {fileID: 21300000, guid: e6ac8b5c7f825484dac53bf8785bd112, type: 3}
   Icon: {fileID: 21300000, guid: 2b6d417684cee0f43ae2753ddd2bff5a, type: 3}
   ChangePeople: 0
-  ProcessSell: 1
+  ProcessSell: 0
   ProcessMoney: 1
   ProcessTime: 15
   ProcessCost:
-  - Resource: {fileID: 11400000, guid: 29de894bdd8053e42821a84da93946d4, type: 2}
+  - Resource: {fileID: 11400000, guid: bc2b7bdd8b9df6a41b0c78acda007e15, type: 2}
     Value: 2
