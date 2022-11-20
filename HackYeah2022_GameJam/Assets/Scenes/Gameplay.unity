@@ -776,6 +776,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520bc1842d5b0c44eb926e4f1f28c080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResourceObjects: []
+  _ResourceAmountPopup: {fileID: 220944982442698180, guid: c92c1be1e351e1042a87dd81353798ca,
+    type: 3}
   Resources: 
   People: 
 --- !u!4 &684502080

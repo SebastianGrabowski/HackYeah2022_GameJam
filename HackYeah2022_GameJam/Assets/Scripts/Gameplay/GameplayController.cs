@@ -7,6 +7,10 @@ namespace Game.Gameplay
 
     public class GameplayController : MonoSingleton<GameplayController>
     {
+        [HideInInspector]public List<GameObject> ResourceObjects = new List<GameObject>();
+
+        [SerializeField]private ResourceAmountPopup _ResourceAmountPopup;
+
         [HideInInspector]public int[] Resources;
         [HideInInspector]public int[] People;
 
@@ -15,6 +19,11 @@ namespace Game.Gameplay
         public void ChangeResource(int resourceID, int value)
         {
             Resources[resourceID] += value;
+            ResourceAmountPopup resourceAmountPopup = Instantiate(_ResourceAmountPopup, ResourceObjects[resourceID].transform);
+            resourceAmountPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
+            resourceAmountPopup.SetAmount(value);
+            
+            Destroy(resourceAmountPopup.gameObject, 1.5f);
         }
 
         protected override void OnAwake()

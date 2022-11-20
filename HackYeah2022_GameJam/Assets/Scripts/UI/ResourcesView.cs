@@ -27,6 +27,8 @@ namespace Game
                 newItem.transform.GetChild(0).GetComponent<Image>().sprite = res.Icon;
                 newItem.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = LocalizationController.GetValue("ResourceName_" + i.ToString());
                 _ValueLabels.Add(valueLabel);
+
+                Game.Gameplay.GameplayController.Instance.ResourceObjects.Add(newItem);
             }
             _Template.gameObject.SetActive(false);
 
