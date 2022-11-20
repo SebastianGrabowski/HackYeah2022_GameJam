@@ -121,8 +121,7 @@ public class Collectible : MonoBehaviour
     void Collected()
     {
         if(_Once) return;
-        
-        Debug.Log("Tree collected");
+
         Game.Gameplay.GameplayController.Instance.ChangeResource(_ResourceData.ID, _Amount);
         Destroy(this.gameObject);
         _Once = true;
