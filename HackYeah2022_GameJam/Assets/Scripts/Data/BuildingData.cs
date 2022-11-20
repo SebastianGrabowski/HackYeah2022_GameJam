@@ -23,5 +23,11 @@ namespace Game.Data
         public Sprite ViewSprite;
         public Sprite Icon;
         public int ChangePeople;
+
+        [Header("Process")]
+        public bool ProcessSell;
+        public int ProcessMoney;
+        public float ProcessTime;
+        public ResourceValue[] ProcessCost;
     }
 }
